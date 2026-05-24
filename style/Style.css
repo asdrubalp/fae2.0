@@ -33,7 +33,7 @@ body {
 #principal {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.572), rgba(0, 0, 0, 0.572)), url("img/upscalemedia-transformed.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.572), rgba(0, 0, 0, 0.572)), url("img/IMG-20141119-WA0039.jpg");
     background-size: cover;
     background-position: center;    
     background-repeat: no-repeat;
@@ -226,24 +226,24 @@ body {
 .seccion-mitad1 { display: flex; width: 100%; min-height: 50vh; background-color: #274683; }
 
 .mitad-imagen { width: 50%; background-size: cover; background-position: center; background-repeat: no-repeat; }
-.pasado-img { background-image: url("img/554817691_24683566754607182_4028889718862192963_n.jpg"); }
-.futuro-img { background-image: url("img/unnamed.jpg"); }
+.pasado-img { background-image: url("img/michigan\ 078.jpg"); }
+.futuro-img { background-image: url("img/Nuestro futuro2.png"); }
 
-.mitad-texto { width: 50%; padding: 4rem 8%; display: flex; flex-direction: column; justify-content: center; }
+.mitad-texto { width: 50%; padding: 3rem 6%; display: flex; flex-direction: column; justify-content: center; }
 .mitad-texto h2 { font-family: var(--font-heading); font-size: 2.5rem; color: white; margin-bottom: 0.5rem; text-transform: uppercase; }
 .linea-naranja { width: 60px; height: 4px; background-color: var(--primary); margin-bottom: 1.5rem; }
-.mitad-texto p { font-size: 1.15rem; color: white; line-height: 1.6; margin-bottom: 1rem; }
+.mitad-texto p { font-size: 1rem; color: white; line-height: 1.3; margin-bottom: 1rem; }
 
 .seccion-texto-centrado { background-color: #27272c; padding: 3rem 2rem; display: flex; justify-content: center; align-items: center; text-align: center; }
 .contenedor-texto-amplio { max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; }
 .contenedor-texto-amplio h2 { font-family: var(--font-heading); font-size: 2.5rem; color: white; margin-bottom: 0.3rem; text-transform: uppercase; }
 .linea-naranja.centrada { width: 80px; height: 4px; background-color: var(--primary); margin-bottom: 2rem; border-radius: 2px; }
-.contenedor-texto-amplio p { font-size: 1.2rem; color: white; line-height: 1.4; margin-bottom: 1rem; }
+.contenedor-texto-amplio p { font-size: 1rem; color: white; line-height: 1.3; margin-bottom: 1rem; }
 
 /* =========================================
    DISEÑO ANTERIOR
    ========================================= */
-.seccion-diseno-anterior { background-color: #1e1e21; padding: 6rem 2rem; display: flex; justify-content: center; align-items: center; }
+.seccion-diseno-anterior { background-color: #1e1e21; padding: 3rem 2rem; display: flex; justify-content: center; align-items: center; }
 .diseno-container { max-width: 1200px; width: 100%; display: flex; align-items: center; gap: 5rem; }
 .diseno-texto { flex: 1; }
 .diseno-texto h2 { font-family: var(--font-heading); font-size: 2.8rem; color: white; margin-bottom: 0.5rem; text-transform: uppercase; line-height: 1.1; }
@@ -252,7 +252,7 @@ body {
 
 .specs-list { list-style: none; padding: 0; }
 .specs-list li { font-size: 1rem; color: #e0e0e5; margin-bottom: 1rem; display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 1rem 1.5rem; border-radius: 8px; border-left: 3px solid var(--primary); transition: transform 0.3s ease, background 0.3s ease; }
-.specs-list li:hover { transform: translateX(10px); background: rgba(255, 255, 255, 0.08); }
+.specs-list li:hover { transform: translateX(10px); background: #274683; }
 .specs-list i { color: var(--primary); font-size: 1.2rem; width: 25px; text-align: center; }
 
 .diseno-imagen { flex: 1; position: relative; }
@@ -262,7 +262,7 @@ body {
 /* =========================================
    EL EQUIPO (TEAM)
    ========================================= */
-.seccion-team { background-color: var(--primary); padding: 3.5rem 2rem; color: #111; }
+.seccion-team { background-color: var(--primary); padding: 2rem 2rem; color: #111; }
 .team-container { max-width: 1350px; margin: 0 auto; }
 .team-header { text-align: center; margin-bottom: 2.5rem; }
 .team-header h2 { font-size: 2.8rem; font-family: var(--font-heading); text-transform: uppercase; color: #111; }
@@ -292,9 +292,9 @@ body {
 /* =========================================
    GALERÍA CARRUSEL
    ========================================= */
-.seccion-galeria { background-color: #274683; padding: 5rem 2rem; }
-.galeria-header { text-align: center; margin-bottom: 3.5rem; }
-.galeria-header h2 { font-family: var(--font-heading); font-size: 2.8rem; color: white; margin-bottom: 0.3rem; text-transform: uppercase; }
+.seccion-galeria { background-color: #274683; padding: 2rem 2rem; }
+.galeria-header { text-align: center; margin-bottom: 1.5rem; }
+.galeria-header h2 { font-family: var(--font-heading); font-size: 2.8rem; color: white; margin-bottom: 0.1rem; text-transform: uppercase; }
 .galeria-header h2 span { color: var(--primary); }
 .galeria-header p { color: #cccccc; font-size: 1.1rem; }
 
@@ -305,7 +305,7 @@ body {
 .galeria-item { min-width: 320px; height: 300px; flex-shrink: 0; scroll-snap-align: start; position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
 .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 
-.galeria-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(253, 164, 23, 0.85); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease; }
+.galeria-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease; }
 .galeria-overlay i { color: black; font-size: 2.5rem; transform: translateY(30px); transition: transform 0.4s ease; }
 .galeria-item:hover img { transform: scale(1.15); }
 .galeria-item:hover .galeria-overlay { opacity: 1; }
@@ -319,7 +319,7 @@ body {
 /* =========================================
    REDES SOCIALES MINIMALISTA
    ========================================= */
-.redes-lineal-min { background-color: #27272c; padding: 2.5rem 1rem; display: flex; justify-content: center; align-items: center; }
+.redes-lineal-min { background-color: #27272c; padding: 2rem 1rem; display: flex; justify-content: center; align-items: center; }
 .redes-container-min { width: 100%; max-width: 1000px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
 .redes-header-min h2 { font-family: var(--font-heading); font-size: 1.8rem; color: white; text-transform: uppercase; line-height: 1.1; text-align: left; margin: 0; }
 .redes-header-min h2 span { color: var(--primary); display: block; }
@@ -533,6 +533,13 @@ body {
     .diseno-badge { right: 15px; bottom: -15px; }
     .redes-container-min { flex-direction: column; gap: 2rem; }
     .redes-header-min h2 { text-align: center; }
+    /* Ajuste responsivo de la galería en móviles */
+    .galeria-item { 
+        min-width: 75vw; /* La foto ocupará el 75% del ancho de la pantalla del celular */
+        height: 60vw; /* La altura crece o se encoge en proporción perfecta al ancho */
+        max-height: 320px; /* Un límite de seguridad para que no se vuelva gigante en tablets pequeñas */
+        scroll-snap-align: center; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -646,6 +653,13 @@ body {
     .member-name {
         font-size: 1.15rem;
             }
+            /* Ajuste responsivo de la galería en móviles */
+    .galeria-item { 
+        min-width: 75vw; /* La foto ocupará el 75% del ancho de la pantalla del celular */
+        height: 60vw; /* La altura crece o se encoge en proporción perfecta al ancho */
+        max-height: 320px; /* Un límite de seguridad para que no se vuelva gigante en tablets pequeñas */
+        scroll-snap-align: center; 
+    }
 
 }
 
