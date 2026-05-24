@@ -761,10 +761,6 @@ body {
         display: block;
     }
 
-    .btn-carrusel { 
-        display: none !important; 
-    }
-
     .galeria-overlay { 
         display: none !important; 
     }
