@@ -653,12 +653,113 @@ body {
     .member-name {
         font-size: 1.15rem;
             }
-            /* Ajuste responsivo de la galería en móviles */
+            /* =========================================
+       CORRECCIÓN: DISEÑO ANTERIOR EN MÓVILES
+       ========================================= */
+    .seccion-diseno-anterior {
+        padding: 3rem 1.5rem; 
+        overflow: hidden; /* Corta cualquier elemento rebelde que intente salirse de la pantalla */
+    }
+    
+    .diseno-container {
+        flex-direction: column;
+        gap: 2.5rem; /* Le damos un buen respiro entre el texto y la foto */
+        width: 100%;
+    }
+
+    /* Forzamos a que los bloques no superen el tamaño del teléfono */
+    .diseno-texto, 
+    .diseno-imagen {
+        width: 100%; 
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Centramos los textos y títulos para un look más móvil */
+    .diseno-texto h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .diseno-texto .linea-naranja {
+        margin: 0.8rem auto 1.5rem auto; /* Centramos la línea naranja */
+    }
+
+    .diseno-texto p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Arreglamos la lista para que no se deforme si el texto baja a dos líneas */
+    .specs-list li {
+        font-size: 0.85rem;
+        padding: 0.8rem 1rem;
+        margin-bottom: 0.8rem;
+        align-items: flex-start; /* Evita que el ícono quede en el medio si hay mucho texto */
+        word-break: break-word; /* Evita que palabras largas rompan el borde */
+    }
+
+    .specs-list i {
+        margin-top: 3px; /* Alineamos el ícono con la primera línea del texto */
+    }
+
+    .diseno-imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajustamos la etiqueta de "Michigan 2015" */
+    .diseno-badge {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+        right: 15px; /* Lo metemos un poco más a la pantalla */
+        bottom: -15px; 
+    }
+    /* =========================================
+       CORRECCIÓN DEFINITIVA: GALERÍA EN MÓVILES
+       ========================================= */
+    .seccion-galeria { 
+        padding: 3rem 0; 
+        overflow: hidden; /* CLAVE: Evita que el carrusel rompa el ancho de la página hacia los lados */
+        width: 100%;
+    }
+    
+    .galeria-header { 
+        padding: 0 1.5rem; 
+    }
+    
+    .carrusel-wrapper {
+        width: 100%;
+        position: relative;
+    }
+    
+    .carrusel-track { 
+        padding: 1rem 7.5vw; /* Da un margen perfecto a los lados para que las fotos respiren */
+        gap: 1.5rem; 
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iOS y Android */
+        scroll-snap-type: x mandatory; /* Activa el efecto imán */
+    }
+    
     .galeria-item { 
-        min-width: 75vw; /* La foto ocupará el 75% del ancho de la pantalla del celular */
-        height: 60vw; /* La altura crece o se encoge en proporción perfecta al ancho */
-        max-height: 320px; /* Un límite de seguridad para que no se vuelva gigante en tablets pequeñas */
-        scroll-snap-align: center; 
+        min-width: 85vw; /* La foto ocupará el 85% del ancho del celular */
+        height: 60vw; /* La altura será proporcional al ancho, logrando un rectángulo cinematográfico */
+        max-height: 350px; /* Límite por si es una tablet pequeña */
+        scroll-snap-align: center; /* Efecto imán: la foto se frena exactamente en el centro */
+        border-radius: 12px;
+    }
+
+    /* Ocultamos las flechas en celular: el usuario desliza con el dedo naturalmente */
+    .btn-carrusel { 
+        display: none !important; 
+    }
+
+    /* Ocultamos el filtro naranja para no interrumpir el gesto táctil */
+    .galeria-overlay { 
+        display: none !important; 
     }
 
 }
@@ -667,4 +768,68 @@ body {
     .fila-iconos-rs { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
     .item-rs i { font-size: 2rem; }
     .item-rs p { font-size: 0.8rem; }
+    /* =========================================
+       CORRECCIÓN: DISEÑO ANTERIOR EN MÓVILES
+       ========================================= */
+    .seccion-diseno-anterior {
+        padding: 3rem 1.5rem; 
+        overflow: hidden; /* Corta cualquier elemento rebelde que intente salirse de la pantalla */
+    }
+    
+    .diseno-container {
+        flex-direction: column;
+        gap: 2.5rem; /* Le damos un buen respiro entre el texto y la foto */
+        width: 100%;
+    }
+
+    /* Forzamos a que los bloques no superen el tamaño del teléfono */
+    .diseno-texto, 
+    .diseno-imagen {
+        width: 100%; 
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Centramos los textos y títulos para un look más móvil */
+    .diseno-texto h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .diseno-texto .linea-naranja {
+        margin: 0.8rem auto 1.5rem auto; /* Centramos la línea naranja */
+    }
+
+    .diseno-texto p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Arreglamos la lista para que no se deforme si el texto baja a dos líneas */
+    .specs-list li {
+        font-size: 0.85rem;
+        padding: 0.8rem 1rem;
+        margin-bottom: 0.8rem;
+        align-items: flex-start; /* Evita que el ícono quede en el medio si hay mucho texto */
+        word-break: break-word; /* Evita que palabras largas rompan el borde */
+    }
+
+    .specs-list i {
+        margin-top: 3px; /* Alineamos el ícono con la primera línea del texto */
+    }
+
+    .diseno-imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajustamos la etiqueta de "Michigan 2015" */
+    .diseno-badge {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+        right: 15px; /* Lo metemos un poco más a la pantalla */
+        bottom: -15px; 
+    }
 }
