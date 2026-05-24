@@ -717,13 +717,14 @@ body {
         right: 15px; /* Lo metemos un poco más a la pantalla */
         bottom: -15px; 
     }
+
     /* =========================================
-       CORRECCIÓN DEFINITIVA: GALERÍA EN MÓVILES
+       CORRECCIÓN DEFINITIVA: GALERÍA EN iPHONE (SAFARI)
        ========================================= */
     .seccion-galeria { 
         padding: 3rem 0; 
-        overflow: hidden; /* CLAVE: Evita que el carrusel rompa el ancho de la página hacia los lados */
         width: 100%;
+        overflow-x: hidden; /* Solo cortamos los bordes horizontales para evitar conflictos en iOS */
     }
     
     .galeria-header { 
@@ -732,32 +733,38 @@ body {
     
     .carrusel-wrapper {
         width: 100%;
-        position: relative;
     }
     
     .carrusel-track { 
-        padding: 1rem 7.5vw; /* Da un margen perfecto a los lados para que las fotos respiren */
-        gap: 1.5rem; 
+        padding: 1rem 7.5vw; 
         display: flex;
+        gap: 1.5rem; 
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iOS y Android */
-        scroll-snap-type: x mandatory; /* Activa el efecto imán */
+        -webkit-overflow-scrolling: touch; /* Activa la inercia nativa de Apple */
+        scroll-snap-type: x mandatory; 
+        scrollbar-width: none; /* Oculta la barra de abajo en móviles Android */
+    }
+
+    /* Oculta la barra de desplazamiento fea específicamente en iPhones/Safari */
+    .carrusel-track::-webkit-scrollbar {
+        display: none; 
     }
     
     .galeria-item { 
-        min-width: 85vw; /* La foto ocupará el 85% del ancho del celular */
-        height: 60vw; /* La altura será proporcional al ancho, logrando un rectángulo cinematográfico */
-        max-height: 350px; /* Límite por si es una tablet pequeña */
-        scroll-snap-align: center; /* Efecto imán: la foto se frena exactamente en el centro */
+        /* LA MAGIA PARA iPHONE: "flex: 0 0 [ancho]" obliga a Safari a respetar el tamaño */
+        flex: 0 0 85vw; 
+        width: 85vw; 
+        height: 60vw; 
+        max-height: 350px; 
+        scroll-snap-align: center; 
         border-radius: 12px;
+        display: block;
     }
 
-    /* Ocultamos las flechas en celular: el usuario desliza con el dedo naturalmente */
     .btn-carrusel { 
         display: none !important; 
     }
 
-    /* Ocultamos el filtro naranja para no interrumpir el gesto táctil */
     .galeria-overlay { 
         display: none !important; 
     }
