@@ -31,3 +31,17 @@ var x = setInterval(function() {
         document.getElementById("segundos").innerHTML = "00";
     }
 }, 1000);
+
+/* =========================================
+   CONTROLADOR DEL CARRUSEL DE GALERÍA
+   ========================================= */
+function moverCarrusel(direccion) {
+    // Busca la pista donde están todas las fotos
+    const pista = document.getElementById('pista-galeria');
+    
+    // Calcula cuánto debe desplazarse: El ancho de una foto (320px) + el espacio del gap (24px)
+    const distancia = 344 * direccion; 
+    
+    // Ejecuta el movimiento suave
+    pista.scrollBy({ left: distancia, behavior: 'smooth' });
+}

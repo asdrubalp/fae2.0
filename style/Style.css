@@ -1,6 +1,3 @@
-/* =========================================
-   VARIABLES DE DISEÑO
-   ========================================= */
 :root {
     --primary: #fda417; /* Tu naranja original */
     --primary-hover: #fda417;
@@ -14,6 +11,10 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+h2{
+    font-family: 'orbitron';
 }
 
 
@@ -134,33 +135,7 @@ body {
     color: #fda417;
 }
 
-/* =========================================
-   RESPONSIVIDAD PARA DISPOSITIVOS MÓVILES
-   ========================================= */
-@media (max-width: 768px) {
-    .titulo-pagina-inicio {
-        padding: 0 1.5rem;
-    }
-    
-    #botones-titulo {
-        gap: 0.5rem;
-    }
-    
-    .botones-de-inicio {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.5rem;
-    }
-    
-    #Somo-Formula-Sae {
-        flex-direction: column; /* El logotipo se coloca arriba y el texto abajo en celulares */
-        gap: 1.5rem;
-        text-align: center;
-    }
-    
-    .texto-somos-team-formula-sae {
-        font-size: 1.1rem;
-    }
-}
+
 /* =========================================
    HISTORIA (Tus imágenes de fondo organizadas)
    ========================================= */
@@ -233,24 +208,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* =========================================
-   ADAPTACIÓN PARA CELULARES
-   ========================================= */
-@media (max-width: 992px) {
-    .seccion-mitad {
-        flex-direction: column; /* Apila imagen y texto en pantallas pequeñas */
-    }
-    
-    .mitad-imagen {
-        width: 100%;
-        min-height: 300px; /* Le da altura a la imagen en el celular */
-    }
-    
-    .mitad-texto {
-        width: 100%;
-        padding: 3rem 2rem;
-    }
-}
 
 /* =========================================
    SECCIÓN: NUESTRO PRESENTE (SOLO TEXTO)
@@ -297,20 +254,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Adaptación para celulares */
-@media (max-width: 768px) {
-    .seccion-texto-centrado {
-        padding: 4rem 1.5rem;
-    }
-    
-    .contenedor-texto-amplio h2 {
-        font-size: 2rem;
-    }
-    
-    .contenedor-texto-amplio p {
-        font-size: 1.05rem;
-    }
-}
 
 /* =========================================
    SECCIÓN: NUESTRO FUTURO (50/50)
@@ -453,23 +396,6 @@ body {
     margin-top: -1.5rem; /* Ajuste visual para centrar con los números */
 }
 
-/* =========================================
-   ADAPTACIÓN PARA TELÉFONOS (MÓVIL)
-   ========================================= */
-@media (max-width: 768px) {
-    .event-container {
-        gap: 2rem;
-        text-align: center; /* Centramos todo en el teléfono */
-        flex-direction: column;
-    }
-    
-    .event-info { text-align: center; }
-    
-    .simple-countdown { gap: 1rem; }
-    .time-box .number { font-size: 2.5rem; }
-    .time-box .label { font-size: 0.8rem; }
-    .separator { font-size: 2rem; margin-top: -1rem; }
-}
 
 /* =========================================
    SECCIÓN DE DONACIONES (ALTURA REDUCIDA AL 50%)
@@ -616,19 +542,6 @@ body {
     color: black;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .donaciones-minimal { padding: 2rem 1.5rem; }
-    .donaciones-texto-min h2 { font-size: 1.6rem; }
-    .donaciones-razones-min { 
-        flex-direction: column; 
-        gap: 1rem; 
-        padding-top: 1.5rem;
-    }
-    .razon-item { flex-direction: column; gap: 0.4rem; }
-    .tracker-info { flex-direction: column; align-items: center; gap: 0.3rem; }
-    .monto-actual { font-size: 1.5rem; }
-}
 
 /* =========================================
    SECCIÓN: TEAM Y RECLUTAMIENTO (MÁS ANCHA Y CORTA)
@@ -786,12 +699,6 @@ body {
     color: black;
 }
 
-/* Responsividad para celulares */
-@media (max-width: 768px) {
-    .team-header h2 { font-size: 2.2rem; }
-    .team-grid { grid-template-columns: 1fr; }
-    .card-img { height: 160px; } /* Aún más corta en móviles */
-}
 
 /* =========================================
    SECCIÓN: REDES SOCIALES (ORIGINAL Y 50% MÁS CORTA)
@@ -882,27 +789,330 @@ body {
     color: var(--primary, #fda417);
 }
 
+
 /* =========================================
-   RESPONSIVIDAD (Para que no se rompa en celulares)
+   SECCIÓN: GALERÍA (CARRUSEL)
    ========================================= */
-@media (max-width: 992px) {
-    .redes-container-min {
-        flex-direction: column; /* Apila el título arriba y los íconos abajo */
-        gap: 2rem;
-    }
-    
-    .redes-header-min h2 {
-        text-align: center;
-    }
+.seccion-galeria {
+    background-color: #274683;
+    padding: 3rem 2rem;
 }
 
-@media (max-width: 600px) {
-    .fila-iconos-rs {
-        gap: 1.5rem; /* Acerca más los íconos */
-        flex-wrap: wrap; /* Permite que bajen a otra línea si no caben */
-        justify-content: center;
-    }
+.galeria-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.galeria-header h2 {
+    font-family: var(--font-heading, 'Orbitron', sans-serif);
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.galeria-header h2 span { color: var(--primary, #fda417); }
+
+.galeria-header p {
+    font-family: var(--font-text, 'Inter', sans-serif);
+    color: #cccccc;
+    font-size: 1.1rem;
+}
+
+/* Envoltura del Carrusel y Botones */
+.carrusel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* La pista horizontal desplazable */
+.carrusel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    /* Efecto imán: obliga a la foto a centrarse al parar de scrollear */
+    scroll-snap-type: x mandatory; 
+    padding: 1rem 0; /* Espacio para que las sombras no se corten */
     
-    .item-rs i { font-size: 2rem; }
-    .item-rs p { font-size: 0.8rem; }
+    /* Ocultar barra de scroll para que se vea limpio */
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.carrusel-track::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Opera */
+}
+
+/* Tarjetas Individuales de Foto */
+.galeria-item {
+    min-width: 320px; /* Ancho fijo para cada foto en la fila */
+    height: 300px;
+    flex-shrink: 0; /* Evita que las fotos se aplasten entre sí */
+    scroll-snap-align: start; /* Se detiene exactamente al borde de la tarjeta */
+    
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Efectos Hover de la caja de luz naranja */
+.galeria-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(253, 164, 23, 0.85); 
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; transition: opacity 0.4s ease;
+}
+
+.galeria-overlay i {
+    color: black; font-size: 2.5rem;
+    transform: translateY(30px); transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img { transform: scale(1.15); }
+.galeria-item:hover .galeria-overlay { opacity: 1; }
+.galeria-item:hover .galeria-overlay i { transform: translateY(0); }
+
+/* Diseño de los Botones de navegación (Flechas) */
+.btn-carrusel {
+    background-color: var(--primary, #fda417);
+    color: black;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.btn-carrusel:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+/* Posición de las flechas a los lados de la pista */
+.btn-izq { left: -25px; }
+.btn-der { right: -25px; }
+
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.footer-sae {
+    background-color: #111111; /* El color más oscuro de la paleta para cerrar la web */
+    color: #cccccc;
+    padding-top: 5rem;
+    border-top: 2px solid rgba(253, 164, 23, 0.2); /* Una línea naranja muy sutil arriba */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* La primera columna es más ancha */
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Títulos de las columnas */
+.footer-sae h3 {
+    font-family: var(--font-heading, 'Orbitron', sans-serif);
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Columna de la marca (Logo) */
+.brand-col .footer-logo {
+    height: 250px;
+    margin-top: -80px;
+}
+
+.brand-col p {
+    font-family: var(--font-text, 'Inter', sans-serif);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 350px;
+}
+
+/* Listas de Enlaces y Contacto */
+.footer-sae ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-sae ul li {
+    margin-bottom: 0.8rem;
+    font-family: var(--font-text, 'Inter', sans-serif);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos de los enlaces */
+.links-col a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.links-col a:hover {
+    color: var(--primary, #fda417);
+    padding-left: 5px; /* Pequeño efecto de movimiento al pasar el mouse */
+}
+
+/* Íconos de contacto */
+.contact-col i {
+    color: var(--primary, #fda417);
+    font-size: 1.1rem;
+    width: 20px; /* Asegura que todos los íconos ocupen el mismo ancho y el texto se alinee */
+    text-align: center;
+}
+
+/* Barra inferior de Copyright */
+.footer-bottom {
+    background-color: #0a0a0a; /* Negro casi puro */
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-bottom p {
+    font-family: var(--font-text, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+
+/* =========================================
+   SECCIÓN: NUESTRO DISEÑO ANTERIOR
+   ========================================= */
+.seccion-diseno-anterior {
+    background-color: #1e1e21; /* Un gris muy oscuro, ligeramente distinto a las otras secciones */
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diseno-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+/* --- COLUMNA DE TEXTO --- */
+.diseno-texto {
+    flex: 1; /* Toma la mitad del espacio */
+}
+
+.diseno-texto h2 {
+    font-family: var(--font-heading, 'Orbitron', sans-serif);
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.diseno-texto h2 span {
+    color: var(--primary, #fda417);
+}
+
+.diseno-texto p {
+    font-family: var(--font-text, 'Inter', sans-serif);
+    font-size: 1.1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Ficha Técnica (Lista de Especificaciones) */
+.specs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specs-list li {
+    font-family: var(--font-text, 'Inter', sans-serif);
+    font-size: 1rem;
+    color: #e0e0e5;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03); /* Cajas semi-transparentes */
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary, #fda417); /* Línea naranja al costado */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por cada característica */
+.specs-list li:hover {
+    transform: translateX(10px); /* Se mueve un poco a la derecha */
+    background: rgba(255, 255, 255, 0.08); /* Se ilumina ligeramente */
+}
+
+.specs-list i {
+    color: var(--primary, #fda417);
+    font-size: 1.2rem;
+    width: 25px; /* Mantiene alineados los textos */
+    text-align: center;
+}
+
+/* --- COLUMNA DE IMAGEN --- */
+.diseno-imagen {
+    flex: 1; /* Toma la otra mitad del espacio */
+    position: relative;
+}
+
+.diseno-imagen img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* Sombra 3D profunda */
+    object-fit: cover;
+    display: block;
+}
+
+/* Etiqueta Naranja Flotante */
+.diseno-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background-color: var(--primary, #fda417);
+    color: black;
+    font-family: var(--font-heading, 'Orbitron', sans-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(253, 164, 23, 0.4);
+    letter-spacing: 1px;
 }
