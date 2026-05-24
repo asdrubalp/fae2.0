@@ -1,7 +1,10 @@
+/* =========================================
+   VARIABLES Y BASE
+   ========================================= */
 :root {
-    --primary: #fda417; /* Tu naranja original */
+    --primary: #fda417; 
     --primary-hover: #fda417;
-    --bg-dark-panel: #1e1e21; /* Gris oscuro texturizado */
+    --bg-dark-panel: #1e1e21; 
     --font-heading: 'Orbitron', sans-serif;
     --font-text: 'Inter', sans-serif;
 }
@@ -13,10 +16,9 @@
     text-decoration: none;
 }
 
-h2{
-    font-family: 'orbitron';
+html {
+    scroll-behavior: smooth;
 }
-
 
 body {
     background-color: #333;
@@ -26,34 +28,58 @@ body {
 }
 
 /* =========================================
-   HEADER PRINCIPAL (ESTILO ORIGINAL ACABADO)
+   HEADER & HERO (INICIO)
    ========================================= */
 #principal {
     width: 100%;
-    height: 100vh; /* Ocupa toda la pantalla de inicio */
+    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.572), rgba(0, 0, 0, 0.572)), url("img/upscalemedia-transformed.png");
     background-size: cover;
     background-position: center;    
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column; /* Alinea la barra arriba y el contenido abajo */
+    flex-direction: column;
 }
 
-/* Barra superior */
+/* Barra Sticky */
 .titulo-pagina-inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(rgba(24, 24, 24, 0.33));
+    background: linear-gradient(rgba(24, 24, 24, 0.4), transparent);
     height: 12.5vh;
     width: 100%;
     padding: 0 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: all 0.4s ease;
+}
+
+.titulo-pagina-inicio.sticky {
+    background: #111111;
+    height: 10vh;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid var(--primary);
 }
 
 .imagen-titulo {
-    height: 120%; /* Escala perfectamente dentro del contenedor de la barra */
+    height: 120%;
     width: auto;
 }
+
+/* Botón Hamburguesa PC (Oculto) */
+.menu-hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu-hamburguesa:hover { color: var(--primary); }
 
 #botones-titulo {          
     display: flex;
@@ -61,7 +87,6 @@ body {
     align-items: center;
 }
 
-/* Botones como enlaces limpios (sin meter h1 dentro de button) */
 .botones-de-inicio {
     color: white;
     font-family: 'Orbitron', sans-serif;
@@ -72,44 +97,34 @@ body {
     transition: all 0.4s ease;
     border-radius: 5px;
 }
-
 .botones-de-inicio:hover {
     color: black;
     background-color: white;
 }
+.boton-destacado { background-color: var(--primary); color: black; }
+.boton-destacado:hover { background-color: black; color: var(--primary); }
 
-/* Resalte opcional para el botón de donaciones */
-.boton-destacado {
-    background-color: #fda417;
-    color: black;
-}
-.boton-destacado:hover {
-    background-color: black;
-    color: #fda417;
-}
-
-/* Contenedor central del Isotipo y el Título */
+/* Hero Text */
 #Somo-Formula-Sae {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1; /* Toma todo el espacio disponible restante */
-    gap: 3rem; /* Espacio exacto entre el logo circular y los textos */
+    flex-grow: 1; 
+    gap: 3rem; 
     padding: 2rem;
+    padding-top: 12.5vh; 
 }
 
 .img-Somo-Formula-Sae {
-    height: clamp(540px, 22vh, 660px); /* Se adapta proporcionalmente al monitor */
+    height: 560px; 
     width: auto;
-    margin-left: -140px;
+    margin-left: -50px;
 }
 
-/* Caja contenedora para alinear los textos uno debajo del otro */
 .contenedor-texto-hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: -200px;
 }
 
 .texto-somos-team-formula-sae {
@@ -118,1001 +133,524 @@ body {
     color: #a0a0a5;
     letter-spacing: 4px;
     margin-bottom: 0.2rem;
+    margin-left: -200px;
 }
-
 .texto-somos-team-formula-sae2,
 .texto-somos-team-formula-sae3,
 .texto-somos-team-formula-sae4 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.2rem, 4.5vw, 4.2rem); /* Letra fluida según resolución */
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem); 
     line-height: 1.1;
     font-weight: 900;
     color: white;
+    margin-left: -200px;
 }
-
-/* Tu color naranja identificativo para cerrar el título */
-.texto-somos-team-formula-sae4 {
-    color: #fda417;
-}
-
+.texto-somos-team-formula-sae4 { color: var(--primary); }
 
 /* =========================================
-   HISTORIA (Tus imágenes de fondo organizadas)
-   ========================================= */
-.historia-grid {
-    display: flex;
-    flex-direction: column;
-}
-.historia-card {
-    padding: 4rem 10%;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-}
- /* =========================================
-   SECCIÓN 50/50 (NUESTRO PASADO)
-   ========================================= */
-.seccion-mitad {
-    display: flex;
-    width: 100%;
-    min-height: 50vh; /* Altura mínima de la sección */
-    background-color: #c22319; /* Fondo oscuro para el lado del texto */
-}
-
-/* El bloque de la imagen */
-.mitad-imagen {
-    width: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Conectamos tu imagen específica */
-.pasado-img {
-    background-image: url("img/554817691_24683566754607182_4028889718862192963_n.jpg");
-}
-
-/* El bloque del texto */
-.mitad-texto {
-    width: 50%;
-    padding: 4rem 8%; /* Espaciado interno para que no pegue de los bordes */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.mitad-texto h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-}
-
-/* Pequeña línea decorativa naranja debajo del título */
-.linea-naranja {
-    width: 60px;
-    height: 4px;
-    background-color: var(--primary, #fda417);
-    margin-bottom: 1.5rem;
-}
-
-.mitad-texto p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1.15rem;
-    color: white; /* Gris claro para lectura fluida */
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-
-/* =========================================
-   SECCIÓN: NUESTRO PRESENTE (SOLO TEXTO)
-   ========================================= */
-.seccion-texto-centrado {
-    background-color: #27272c; /* El fondo oscuro que diferencia la sección */
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; /* Centra todo el texto */
-}
-
-.contenedor-texto-amplio {
-    max-width: 900px; /* Limita el ancho para que el texto no se estire demasiado y canse la vista */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contenedor-texto-amplio h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-}
-
-/* Reutilizamos la línea naranja pero asegurando que quede en el medio */
-.linea-naranja.centrada {
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary, #fda417);
-    margin-bottom: 2rem;
-    border-radius: 2px;
-}
-
-.contenedor-texto-amplio p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1.2rem; /* Letra un poco más grande para darle presencia */
-    color: white;
-    line-height: 1.4; /* Más espacio entre líneas para lectura fácil */
-    margin-bottom: 1rem;
-}
-
-
-/* =========================================
-   SECCIÓN: NUESTRO FUTURO (50/50)
-   ========================================= */
-
-/* Conectamos la imagen original de tu carpeta para el futuro */
-.futuro-img {
-    background-image: url("img/unnamed.jpg");
-}
-
-.seccion-mitad1 {
-    display: flex;
-    width: 100%;
-    min-height: 50vh; /* Altura mínima de la sección */
-    background-color: #274683; /* Fondo oscuro para el lado del texto */
-}
-
-/* =========================================
-   EQUIPO (Fondo Naranja y cartas con la foto de WhatsApp)
-   ========================================= */
-.team-section {
-    background-color: var(--primary);
-    color: black;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-.team-grid {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 3rem;
-    flex-wrap: wrap; /* Para que baje en teléfonos */
-}
-.team-card {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("img/WhatsApp Image 2026-05-12 at 12.24.07 PM.jpeg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    width: 350px;
-    padding: 3rem 2rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-    text-align: left;
-}
-.team-card:hover { transform: translateY(-10px); }
-.team-card p { margin: 1.5rem 0; }
-
-.btn-team {
-    background-color: var(--primary);
-    color: black;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 20px;
-    font-family: var(--font-heading);
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
-}
-.btn-team:hover { box-shadow: 0 0 15px rgba(0,0,0,0.5); }
-
-
-/* =========================================
-   RELOJ SENCILLO Y MINIMALISTA
+   EVENTO RELOJ
    ========================================= */
 .event-section {
-    background-color: #274683; /* Fondo oscuro #101011 */
+    background-color: #274683; 
     padding: 3rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .event-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem; /* Separación entre el título y el reloj */
-    flex-wrap: wrap; /* Permite que el reloj pase abajo en celulares */
+    gap: 4rem; 
+    flex-wrap: wrap; 
     max-width: 1000px;
     width: 100%;
 }
+.event-info { text-align: left; }
+.event-info h2 { font-family: var(--font-heading); color: white; font-size: 2.5rem; margin-bottom: 0.2rem; }
+.event-info .fecha { color: var(--primary); font-size: 1.3rem; font-weight: 600; }
 
-/* Estilos del texto izquierdo */
-.event-info {
-    text-align: left;
-}
-
-.event-info h2 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 0.2rem;
-}
-
-.event-info .fecha {
-    color: var(--primary); /* Tu naranja #fda417 */
-    font-size: 1.3rem;
-    font-family: var(--font-text);
-    font-weight: 600;
-}
-
-/* Contenedor del reloj */
-.simple-countdown {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.time-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Los números grandes en naranja */
-.time-box .number {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--primary);
-    line-height: 1;
-}
-
-/* Los textos pequeños (Días, Horas...) en blanco */
-.time-box .label {
-    font-family: var(--font-text);
-    font-size: 1rem;
-    color: white;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Los dos puntos (:) separadores */
-.separator {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.5); /* Blanco semitransparente para no distraer */
-    margin-top: -1.5rem; /* Ajuste visual para centrar con los números */
-}
-
+.simple-countdown { display: flex; align-items: center; gap: 1.5rem; }
+.time-box { display: flex; flex-direction: column; align-items: center; }
+.time-box .number { font-family: var(--font-heading); font-size: 4rem; font-weight: 700; color: var(--primary); line-height: 1; }
+.time-box .label { font-size: 1rem; color: white; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+.separator { font-family: var(--font-heading); font-size: 3rem; color: rgba(255, 255, 255, 0.5); margin-top: -1.5rem; }
 
 /* =========================================
-   SECCIÓN DE DONACIONES (ALTURA REDUCIDA AL 50%)
+   DONACIONES MINIMALISTAS
    ========================================= */
 .donaciones-minimal {
     background-color: #1a1a1c;
-    padding: 2.5rem 2rem; /* Reducido drásticamente de 6rem a 2.5rem */
+    padding: 2.5rem 2rem; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .donaciones-container-min {
-    max-width: 900px; /* Un poco más ancho para que los elementos quepan mejor al comprimirlos */
+    max-width: 900px; 
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem; /* Separación entre bloques reducida a la mitad (antes 3.5rem) */
+    gap: 1.5rem; 
 }
+.donaciones-texto-min { text-align: center; }
+.donaciones-texto-min h2 { font-family: var(--font-heading); font-size: 2rem; color: white; margin-bottom: 0.5rem; }
+.donaciones-texto-min h2 span { color: var(--primary); }
+.donaciones-texto-min p { font-size: 1rem; color: #a0a0a5; max-width: 700px; margin: 0 auto; }
 
-/* Tipografía de encabezados más compacta */
-.donaciones-texto-min {
-    text-align: center;
-}
+.donaciones-tracker-min { width: 100%; }
+.tracker-info { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+.monto-actual { font-family: var(--font-heading); font-size: 1.8rem; color: white; font-weight: 700; }
+.usd-text { font-size: 0.85rem; color: #888; margin-left: 8px; }
+.monto-meta { font-size: 0.9rem; color: #888; }
+.barra-fondo-min { width: 100%; height: 5px; background-color: #333; border-radius: 3px; overflow: hidden; }
+.barra-relleno-min { height: 100%; background-color: var(--primary); border-radius: 3px; transition: width 1.5s; }
 
-.donaciones-texto-min h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 2rem; /* Ligeramente más pequeño */
-    color: white;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-}
+.donaciones-razones-min { display: flex; justify-content: center; gap: 3rem; width: 100%; border-top: 1px solid #333; padding-top: 1.5rem; }
+.razon-item { display: flex; flex-direction: row; align-items: center; gap: 0.8rem; }
+.razon-item i { font-size: 1.2rem; color: var(--primary); }
+.razon-item span { font-size: 0.8rem; color: #a0a0a5; text-transform: uppercase; letter-spacing: 1px; }
 
-.donaciones-texto-min h2 span {
-    color: var(--primary, #fda417);
-}
-
-.donaciones-texto-min p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1rem;
-    color: #a0a0a5;
-    line-height: 1.4; /* Menos interlineado */
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Rastreador de Donaciones (Barra de progreso) */
-.donaciones-tracker-min {
-    width: 100%;
-}
-
-.tracker-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem; /* Margen inferior reducido */
-}
-
-.monto-actual {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 1.8rem; /* Tamaño reducido */
-    color: white;
-    font-weight: 700;
-}
-
-.usd-text {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.85rem;
-    color: #888;
-    margin-left: 8px;
-}
-
-.monto-meta {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.9rem;
-    color: #888;
-}
-
-/* Barra ultra fina */
-.barra-fondo-min {
-    width: 100%;
-    height: 5px; /* Más delgada aún */
-    background-color: #333;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.barra-relleno-min {
-    height: 100%;
-    background-color: var(--primary, #fda417);
-    border-radius: 3px;
-    transition: width 1.5s ease-in-out;
-}
-
-/* Íconos separados por una línea sutil, mucho más cerca de la barra */
-.donaciones-razones-min {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    width: 100%;
-    border-top: 1px solid #333;
-    padding-top: 1.5rem; /* Espaciado superior cortado a la mitad */
-}
-
-.razon-item {
-    display: flex;
-    flex-direction: row; /* Coloca el ícono al lado del texto para ahorrar altura */
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.razon-item i {
-    font-size: 1.2rem; /* Íconos más pequeños */
-    color: var(--primary, #fda417);
-}
-
-.razon-item span {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.8rem;
-    color: #a0a0a5;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Botón Minimalista más delgado */
 .btn-donar-min {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--primary, #fda417);
-    background-color: transparent;
-    border: 2px solid var(--primary, #fda417);
-    padding: 0.6rem 2rem; /* Menos relleno vertical en el botón */
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    margin-top: -0.5rem; /* Lo acerca a los íconos */
+    font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--primary);
+    background-color: transparent; border: 2px solid var(--primary); padding: 0.6rem 2rem;
+    border-radius: 4px; text-transform: uppercase; transition: all 0.3s ease; margin-top: -0.5rem;
 }
-
-.btn-donar-min:hover {
-    background-color: var(--primary, #fda417);
-    color: black;
-}
-
+.btn-donar-min:hover { background-color: var(--primary); color: black; }
 
 /* =========================================
-   SECCIÓN: TEAM Y RECLUTAMIENTO (MÁS ANCHA Y CORTA)
+   HISTORIA (PASADO, PRESENTE, FUTURO)
    ========================================= */
-.seccion-team {
-    background-color: var(--primary, #fda417);
-    padding: 3.5rem 2rem; /* Reducimos el espacio superior e inferior para que la sección sea menos larga */
-    color: #111;
-}
+.seccion-mitad { display: flex; width: 100%; min-height: 50vh; background-color: #c22319; }
+.seccion-mitad1 { display: flex; width: 100%; min-height: 50vh; background-color: #274683; }
 
-.team-container {
-    max-width: 1350px; /* Aumentamos el contenedor (antes 1100px) para que las tarjetas se expandan a lo ancho */
-    margin: 0 auto;
-}
+.mitad-imagen { width: 50%; background-size: cover; background-position: center; background-repeat: no-repeat; }
+.pasado-img { background-image: url("img/554817691_24683566754607182_4028889718862192963_n.jpg"); }
+.futuro-img { background-image: url("img/unnamed.jpg"); }
 
-.team-header {
-    text-align: center;
-    margin-bottom: 2.5rem; /* Menos espacio entre el título y las tarjetas */
-}
+.mitad-texto { width: 50%; padding: 4rem 8%; display: flex; flex-direction: column; justify-content: center; }
+.mitad-texto h2 { font-family: var(--font-heading); font-size: 2.5rem; color: white; margin-bottom: 0.5rem; text-transform: uppercase; }
+.linea-naranja { width: 60px; height: 4px; background-color: var(--primary); margin-bottom: 1.5rem; }
+.mitad-texto p { font-size: 1.15rem; color: white; line-height: 1.6; margin-bottom: 1rem; }
 
-.team-header h2 {
-    font-size: 2.8rem;
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    text-transform: uppercase;
-    color: #111;
-}
-
-.team-header h2 span {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.team-header p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 0.5rem;
-}
-
-
-
-/* Diseño de las tarjetas oscuras */
-.team-card {
-    background-color: #1a1a1c;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-8px);
-}
-
-/* Contenedor de la imagen arriba de la tarjeta */
-.card-img {
-    height: 180px; /* Reducimos la altura de la imagen (antes 250px) para que no ocupe tanto espacio vertical */
-    background-size: cover;
-    background-position: center;
-}
-
-/* Fondo especial para la tarjeta de reclutamiento */
-.reclutamiento-bg {
-    background-color: #27272c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px solid var(--primary, #fda417);
-}
-
-.reclutamiento-bg i {
-    font-size: 5rem; /* Ícono ligeramente más pequeño para adaptarse a la nueva altura */
-    color: var(--primary, #fda417);
-}
-
-/* Contenido de texto dentro de la tarjeta */
-.card-content {
-    padding: 1.8rem 2.5rem; /* Reducimos el padding vertical, pero mantenemos el horizontal amplio */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    color: white;
-}
-
-.card-content h3 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--primary, #fda417);
-}
-
-.card-content p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1rem;
-    color: #cccccc;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-
-/* Lista de requisitos con chulitos */
-.lista-requisitos {
-    list-style: none;
-    margin-bottom: 1.5rem;
-    padding: 0;
-}
-
-.lista-requisitos li {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.95rem;
-    color: #cccccc;
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.lista-requisitos li i {
-    color: var(--primary, #fda417);
-    margin-top: 4px;
-}
-
-/* Botones de las tarjetas */
-.btn-team {
-    margin-top: auto;
-    text-align: center;
-    background-color: var(--primary, #fda417);
-    color: black;
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-weight: 700;
-    padding: 0.9rem; /* Botón ligeramente más delgado */
-    border-radius: 6px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.btn-team:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
-}
-
-/* Variante de botón para reclutamiento */
-.btn-outline {
-    background-color: transparent;
-    border: 2px solid var(--primary, #fda417);
-    color: var(--primary, #fda417);
-}
-
-.btn-outline:hover {
-    background-color: var(--primary, #fda417);
-    color: black;
-}
-
+.seccion-texto-centrado { background-color: #27272c; padding: 3rem 2rem; display: flex; justify-content: center; align-items: center; text-align: center; }
+.contenedor-texto-amplio { max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.contenedor-texto-amplio h2 { font-family: var(--font-heading); font-size: 2.5rem; color: white; margin-bottom: 0.3rem; text-transform: uppercase; }
+.linea-naranja.centrada { width: 80px; height: 4px; background-color: var(--primary); margin-bottom: 2rem; border-radius: 2px; }
+.contenedor-texto-amplio p { font-size: 1.2rem; color: white; line-height: 1.4; margin-bottom: 1rem; }
 
 /* =========================================
-   SECCIÓN: REDES SOCIALES (ORIGINAL Y 50% MÁS CORTA)
+   DISEÑO ANTERIOR
    ========================================= */
-.redes-lineal-min {
-    background-color: #27272c; /* Tu color original */
-    padding: 2.5rem 1rem; /* Altura súper reducida a la mitad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.seccion-diseno-anterior { background-color: #1e1e21; padding: 6rem 2rem; display: flex; justify-content: center; align-items: center; }
+.diseno-container { max-width: 1200px; width: 100%; display: flex; align-items: center; gap: 5rem; }
+.diseno-texto { flex: 1; }
+.diseno-texto h2 { font-family: var(--font-heading); font-size: 2.8rem; color: white; margin-bottom: 0.5rem; text-transform: uppercase; line-height: 1.1; }
+.diseno-texto h2 span { color: var(--primary); }
+.diseno-texto p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; margin-bottom: 2rem; }
 
-.redes-container-min {
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: row; /* Coloca el título y los íconos en la misma línea si hay espacio */
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
+.specs-list { list-style: none; padding: 0; }
+.specs-list li { font-size: 1rem; color: #e0e0e5; margin-bottom: 1rem; display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 1rem 1.5rem; border-radius: 8px; border-left: 3px solid var(--primary); transition: transform 0.3s ease, background 0.3s ease; }
+.specs-list li:hover { transform: translateX(10px); background: rgba(255, 255, 255, 0.08); }
+.specs-list i { color: var(--primary); font-size: 1.2rem; width: 25px; text-align: center; }
 
-/* Título de la sección */
-.redes-header-min h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 1.8rem; /* Tamaño reducido */
-    color: white;
-    text-transform: uppercase;
-    line-height: 1.1;
-    text-align: left;
-    margin: 0;
-}
-
-.redes-header-min h2 span {
-    color: var(--primary, #fda417);
-    display: block; /* Pone "Redes Sociales" debajo de "Nuestras" */
-}
-
-/* Fila horizontal de íconos */
-.fila-iconos-rs {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem; /* Espacio horizontal entre los íconos */
-    align-items: center;
-}
-
-/* Cada bloque de ícono + texto */
-.item-rs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-/* El ícono gigante que te gustaba */
-.item-rs i {
-    font-size: 2.5rem; /* Ícono grande, pero controlado */
-    margin-bottom: 0.5rem;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-/* El texto debajo del ícono */
-.item-rs p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.9rem;
-    text-align: center;
-    line-height: 1.2;
-    margin: 0;
-    font-weight: 600;
-}
-
-.item-rs p span {
-    font-weight: normal;
-    color: #a0a0a5;
-    font-size: 0.8rem;
-}
-
-/* Efecto hover: Solo se pinta de naranja al pasar el mouse */
-.item-rs:hover {
-    transform: translateY(-5px); /* Pequeño salto */
-}
-
-.item-rs:hover i,
-.item-rs:hover p {
-    color: var(--primary, #fda417);
-}
-
+.diseno-imagen { flex: 1; position: relative; }
+.diseno-imagen img { width: 100%; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); object-fit: cover; display: block; }
+.diseno-badge { position: absolute; bottom: -20px; right: -20px; background-color: var(--primary); color: black; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; padding: 1rem 2rem; border-radius: 6px; text-transform: uppercase; box-shadow: 0 10px 20px rgba(253, 164, 23, 0.4); letter-spacing: 1px; }
 
 /* =========================================
-   SECCIÓN: GALERÍA (CARRUSEL)
+   EL EQUIPO (TEAM)
    ========================================= */
-.seccion-galeria {
-    background-color: #274683;
-    padding: 3rem 2rem;
-}
+.seccion-team { background-color: var(--primary); padding: 3.5rem 2rem; color: #111; }
+.team-container { max-width: 1350px; margin: 0 auto; }
+.team-header { text-align: center; margin-bottom: 2.5rem; }
+.team-header h2 { font-size: 2.8rem; font-family: var(--font-heading); text-transform: uppercase; color: #111; }
+.team-header h2 span { color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+.team-header p { font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem; }
 
-.galeria-header {
-    text-align: center;
-    margin-bottom: 1rem;
-}
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 1.5rem; }
+.team-card { background-color: #1a1a1c; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); display: flex; flex-direction: column; transition: transform 0.3s ease; }
+.team-card:hover { transform: translateY(-8px); }
 
-.galeria-header h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 2.8rem;
-    color: white;
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-}
+.card-img { height: 180px; background-size: cover; background-position: center; }
+.reclutamiento-bg { background-color: #27272c; display: flex; justify-content: center; align-items: center; border-bottom: 3px solid var(--primary); }
+.reclutamiento-bg i { font-size: 5rem; color: var(--primary); }
 
-.galeria-header h2 span { color: var(--primary, #fda417); }
+.card-content { padding: 1.8rem 2.5rem; display: flex; flex-direction: column; flex-grow: 1; color: white; }
+.card-content h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--primary); }
+.card-content p { font-size: 1rem; color: #cccccc; line-height: 1.5; margin-bottom: 1.5rem; }
+.lista-requisitos { list-style: none; margin-bottom: 1.5rem; padding: 0; }
+.lista-requisitos li { font-size: 0.95rem; color: #cccccc; margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px; }
+.lista-requisitos li i { color: var(--primary); margin-top: 4px; }
 
-.galeria-header p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    color: #cccccc;
-    font-size: 1.1rem;
-}
+.btn-team { margin-top: auto; text-align: center; background-color: var(--primary); color: black; font-family: var(--font-heading); font-weight: 700; padding: 0.9rem; border-radius: 6px; text-transform: uppercase; transition: all 0.3s ease; }
+.btn-team:hover { background-color: white; color: black; box-shadow: 0 5px 15px rgba(255,255,255,0.3); }
+.btn-outline { background-color: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover { background-color: var(--primary); color: black; }
 
-/* Envoltura del Carrusel y Botones */
-.carrusel-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
+/* =========================================
+   GALERÍA CARRUSEL
+   ========================================= */
+.seccion-galeria { background-color: #274683; padding: 5rem 2rem; }
+.galeria-header { text-align: center; margin-bottom: 3.5rem; }
+.galeria-header h2 { font-family: var(--font-heading); font-size: 2.8rem; color: white; margin-bottom: 0.3rem; text-transform: uppercase; }
+.galeria-header h2 span { color: var(--primary); }
+.galeria-header p { color: #cccccc; font-size: 1.1rem; }
 
-/* La pista horizontal desplazable */
-.carrusel-track {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    /* Efecto imán: obliga a la foto a centrarse al parar de scrollear */
-    scroll-snap-type: x mandatory; 
-    padding: 1rem 0; /* Espacio para que las sombras no se corten */
-    
-    /* Ocultar barra de scroll para que se vea limpio */
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
-}
+.carrusel-wrapper { position: relative; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; }
+.carrusel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 1rem 0; -ms-overflow-style: none; scrollbar-width: none; }
+.carrusel-track::-webkit-scrollbar { display: none; }
 
-.carrusel-track::-webkit-scrollbar {
-    display: none; /* Oculta la barra en Chrome, Safari y Opera */
-}
+.galeria-item { min-width: 320px; height: 300px; flex-shrink: 0; scroll-snap-align: start; position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+.galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 
-/* Tarjetas Individuales de Foto */
-.galeria-item {
-    min-width: 320px; /* Ancho fijo para cada foto en la fila */
-    height: 300px;
-    flex-shrink: 0; /* Evita que las fotos se aplasten entre sí */
-    scroll-snap-align: start; /* Se detiene exactamente al borde de la tarjeta */
-    
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-.galeria-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-/* Efectos Hover de la caja de luz naranja */
-.galeria-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(253, 164, 23, 0.85); 
-    display: flex; justify-content: center; align-items: center;
-    opacity: 0; transition: opacity 0.4s ease;
-}
-
-.galeria-overlay i {
-    color: black; font-size: 2.5rem;
-    transform: translateY(30px); transition: transform 0.4s ease;
-}
-
+.galeria-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(253, 164, 23, 0.85); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease; }
+.galeria-overlay i { color: black; font-size: 2.5rem; transform: translateY(30px); transition: transform 0.4s ease; }
 .galeria-item:hover img { transform: scale(1.15); }
 .galeria-item:hover .galeria-overlay { opacity: 1; }
 .galeria-item:hover .galeria-overlay i { transform: translateY(0); }
 
-/* Diseño de los Botones de navegación (Flechas) */
-.btn-carrusel {
-    background-color: var(--primary, #fda417);
-    color: black;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    position: absolute;
-    z-index: 10;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: all 0.3s ease;
-    display: flex; justify-content: center; align-items: center;
-}
-
-.btn-carrusel:hover {
-    background-color: white;
-    transform: scale(1.1);
-}
-
-/* Posición de las flechas a los lados de la pista */
+.btn-carrusel { background-color: var(--primary); color: black; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; position: absolute; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; }
+.btn-carrusel:hover { background-color: white; transform: scale(1.1); }
 .btn-izq { left: -25px; }
 .btn-der { right: -25px; }
 
+/* =========================================
+   REDES SOCIALES MINIMALISTA
+   ========================================= */
+.redes-lineal-min { background-color: #27272c; padding: 2.5rem 1rem; display: flex; justify-content: center; align-items: center; }
+.redes-container-min { width: 100%; max-width: 1000px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
+.redes-header-min h2 { font-family: var(--font-heading); font-size: 1.8rem; color: white; text-transform: uppercase; line-height: 1.1; text-align: left; margin: 0; }
+.redes-header-min h2 span { color: var(--primary); display: block; }
+
+.fila-iconos-rs { display: flex; flex-direction: row; gap: 3rem; align-items: center; }
+.item-rs { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: white; transition: transform 0.3s ease; }
+.item-rs i { font-size: 2.5rem; margin-bottom: 0.5rem; color: white; transition: color 0.3s ease; }
+.item-rs p { font-size: 0.9rem; text-align: center; line-height: 1.2; margin: 0; font-weight: 600; }
+.item-rs p span { font-weight: normal; color: #a0a0a5; font-size: 0.8rem; }
+.item-rs:hover { transform: translateY(-5px); }
+.item-rs:hover i, .item-rs:hover p { color: var(--primary); }
 
 /* =========================================
-   PIE DE PÁGINA (FOOTER)
+   FOOTER (IMAGE_932288 DESIGN)
    ========================================= */
-.footer-sae {
-    background-color: #111111; /* El color más oscuro de la paleta para cerrar la web */
-    color: #cccccc;
-    padding-top: 5rem;
-    border-top: 2px solid rgba(253, 164, 23, 0.2); /* Una línea naranja muy sutil arriba */
-}
+.site-footer { background-color: #111111; color: #cccccc; padding: 2rem 2rem 1.5rem 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; }
+.footer-content-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; width: 100%; }
+.footer-left-block { display: flex; flex-direction: column; align-items: flex-start; max-width: 50%; }
+.footer-address { font-size: 0.9rem; line-height: 1.4; color: #cccccc; margin: 0; }
+.footer-address span { color: var(--primary); font-weight: 600; }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* La primera columna es más ancha */
-    gap: 4rem;
-    margin-bottom: 4rem;
-}
+.footer-right-block { display: flex; gap: 2.5rem; align-items: center; }
+.contact-icon-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.icon-circle { background-color: var(--primary); color: white; border-radius: 50%; width: 55px; height: 55px; display: flex; justify-content: center; align-items: center; margin-bottom: 0.5rem; box-shadow: 0 5px 15px rgba(253, 164, 23, 0.3); font-size: 1.8rem; }
+.contact-icon-item span { font-size: 0.8rem; color: #a0a0a5; line-height: 1.2; }
 
-/* Títulos de las columnas */
-.footer-sae h3 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Columna de la marca (Logo) */
-.brand-col .footer-logo {
-    height: 250px;
-    margin-top: -80px;
-}
-
-.brand-col p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 350px;
-}
-
-/* Listas de Enlaces y Contacto */
-.footer-sae ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-sae ul li {
-    margin-bottom: 0.8rem;
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Estilos de los enlaces */
-.links-col a {
-    color: #cccccc;
-    text-decoration: none;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-.links-col a:hover {
-    color: var(--primary, #fda417);
-    padding-left: 5px; /* Pequeño efecto de movimiento al pasar el mouse */
-}
-
-/* Íconos de contacto */
-.contact-col i {
-    color: var(--primary, #fda417);
-    font-size: 1.1rem;
-    width: 20px; /* Asegura que todos los íconos ocupen el mismo ancho y el texto se alinee */
-    text-align: center;
-}
-
-/* Barra inferior de Copyright */
-.footer-bottom {
-    background-color: #0a0a0a; /* Negro casi puro */
-    text-align: center;
-    padding: 1.5rem 2rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.footer-bottom p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0;
-}
-
+.footer-divider { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); margin: 0 0 1.5rem 0; }
+.footer-bottom-row { text-align: center; }
+.footer-bottom-row p { font-size: 0.75rem; color: #666; margin: 0; }
 
 /* =========================================
-   SECCIÓN: NUESTRO DISEÑO ANTERIOR
+   ANIMACIONES DE SCROLL (REVEAL)
    ========================================= */
-.seccion-diseno-anterior {
-    background-color: #1e1e21; /* Un gris muy oscuro, ligeramente distinto a las otras secciones */
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.reveal { opacity: 0; transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
+.reveal-bottom { transform: translateY(60px); }
+.reveal-left { transform: translateX(-60px); }
+.reveal-right { transform: translateX(60px); }
+.reveal-scale { transform: scale(0.9); }
+
+/* =========================================
+           BARRA DE NAVEGACIÓN COMPACTA
+           ========================================= */
+        .nav-equipo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #161619;
+            padding: 1rem 4rem;
+            border-bottom: 2px solid rgba(253, 164, 23, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            height: 100px;
+            width: auto;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        .btn-regresar {
+            color: white;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-regresar:hover {
+            color: black;
+            background-color: white;
+            border-color: white;
+        }
+
+        /* =========================================
+           ENCABEZADO DE LA PÁGINA (HERO)
+           ========================================= */
+        .equipo-hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            background: linear-gradient(rgba(17, 17, 17, 0.5), var(--bg-dark)), url("style/img/upscalemedia-transformed.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .equipo-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+        }
+
+        .equipo-hero h1 span {
+            color: var(--primary);
+        }
+
+        .equipo-hero p {
+            color: #a0a0a5;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .linea-naranja {
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 1rem auto 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* =========================================
+           CONTENEDOR PRINCIPAL Y CATEGORÍAS
+           ========================================= */
+        .equipo-seccion {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .categoria-titulo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            color: white;
+            margin: 3rem 0 1.5rem 0;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* Cuadrícula adaptable para las tarjetas de integrantes */
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+
+        /* =========================================
+           DISEÑO DE LAS CARDS DE INTEGRANTES
+           ========================================= */
+        .member-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        /* Contenedor de la foto del integrante */
+        .member-img-box {
+            width: 100%;
+            height: 320px; /* Altura ideal de retrato */
+            overflow: hidden;
+            position: relative;
+            background-color: #222;
+        }
+
+        .member-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta y cuadra la foto de forma inteligente */
+            transition: transform 0.5s ease;
+        }
+
+        /* Contenido de información */
+        .member-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .member-name {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: white;
+            margin: 0 0 0.3rem 0;
+            font-weight: 700;
+        }
+
+/* =========================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES MAESTRAS)
+   ========================================= */
+@media (max-width: 992px) {
+    .img-Somo-Formula-Sae{
+        display: none;
+    }
+    .footer-logo{
+        display: none;
+    }
+    .seccion-mitad, .seccion-mitad1 { flex-direction: column; }
+    .mitad-imagen { width: 100%; min-height: 350px; }
+    .mitad-texto { width: 100%; padding: 4rem 2rem; }
+    .diseno-container { flex-direction: column; gap: 3rem; }
+    .diseno-badge { right: 15px; bottom: -15px; }
+    .redes-container-min { flex-direction: column; gap: 2rem; }
+    .redes-header-min h2 { text-align: center; }
 }
 
-.diseno-container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 5rem;
+@media (max-width: 768px) {
+    .img-Somo-Formula-Sae{
+        display: none;
+    }
+    .footer-logo{
+        display: none;
+    }
+
+    /* MENÚ HAMBURGUESA Y HEADER */
+    .titulo-pagina-inicio { padding: 0 1.5rem; position: relative; }
+    .menu-hamburguesa { display: block; }
+    #botones-titulo { position: absolute; top: 100%; left: 0; width: 100%; background-color: #111111; flex-direction: column; gap: 0; padding: 0; box-shadow: 0 15px 20px rgba(0,0,0,0.8); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out; }
+    #botones-titulo.desplegado { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    .botones-de-inicio { font-size: 1.1rem; padding: 1.5rem 0; width: 100%; text-align: center; border-radius: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .boton-destacado { border-bottom: 3px solid var(--primary); }
+    
+    #Somo-Formula-Sae { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .img-Somo-Formula-Sae { margin-left: 0; height: 220px; }
+    .contenedor-texto-hero { margin-left: 0; }
+    .texto-somos-team-formula-sae{ margin-left: 0px;}
+    .texto-somos-team-formula-sae2, .texto-somos-team-formula-sae3, .texto-somos-team-formula-sae4 { font-size: 2.5rem; margin-left: 0px; }
+
+    /* EVENTO */
+    .event-section { padding: 1.5rem 1rem; }
+    .event-container { gap: 1rem; flex-direction: column; text-align: center; }
+    .event-info h2 { font-size: 1.6rem; margin-bottom: 0.1rem; }
+    .event-info .fecha { font-size: 1rem; }
+    .simple-countdown { gap: 0.6rem; }
+    .time-box .number { font-size: 2rem; }
+    .time-box .label { font-size: 0.65rem; margin-top: 0.2rem; letter-spacing: 0.5px; }
+    .separator { font-size: 1.5rem; margin-top: -0.8rem; }
+
+    /* DONACIONES */
+    .donaciones-minimal { padding: 2.5rem 1.5rem; }
+    .donaciones-texto-min h2 { font-size: 1.6rem; }
+    .monto-actual { font-size: 1.5rem; }
+    .donaciones-razones-min { flex-direction: column; gap: 1rem; padding-top: 1.5rem; }
+
+    /* HISTORIA Y DISEÑO COMPACTO */
+    .mitad-imagen { min-height: 220px; }
+    .mitad-texto { padding: 2rem 1.5rem; }
+    .mitad-texto h2 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .mitad-texto p { font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .seccion-texto-centrado { padding: 2rem 1.5rem; }
+    .contenedor-texto-amplio h2 { font-size: 1.8rem; }
+    .contenedor-texto-amplio p { font-size: 0.95rem; }
+    .seccion-diseno-anterior { padding: 2rem 1.5rem; }
+    .diseno-container { gap: 1.5rem; }
+    .diseno-texto h2 { font-size: 1.8rem; }
+    .diseno-texto p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .specs-list li { font-size: 0.85rem; padding: 0.8rem 1rem; margin-bottom: 0.6rem; }
+    .diseno-badge { font-size: 0.8rem; padding: 0.6rem 1rem; right: 10px; bottom: -10px; }
+
+    /* EQUIPO ULTRA COMPACTO */
+    .team-grid { grid-template-columns: 1fr; }
+    .team-card { width: 100%; max-width: 100%; }
+    .team-header h2 { font-size: 2rem; }
+    .card-img { height: 110px; }
+    .reclutamiento-bg i { font-size: 3.5rem; }
+    .card-content { padding: 1.2rem 1.5rem; }
+    .card-content h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .card-content p { font-size: 0.9rem; margin-bottom: 1rem; }
+    .lista-requisitos { margin-bottom: 1rem; }
+    .lista-requisitos li { font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .btn-team { padding: 0.7rem; font-size: 0.9rem; }
+
+    /* GALERÍA 100% FUNCIONAL EN MÓVIL */
+    .seccion-galeria { padding: 3rem 0; }
+    .galeria-header { padding: 0 1.5rem; }
+    .carrusel-track { padding: 1rem 1.5rem; gap: 1rem; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+    .galeria-item { min-width: 250px; height: 240px; scroll-snap-align: center; }
+    .btn-carrusel { display: flex; width: 40px; height: 40px; font-size: 1rem; background-color: rgba(253, 164, 23, 0.85); }
+    .btn-izq { left: 15px; }
+    .btn-der { right: 15px; }
+    .galeria-overlay { display: none !important; }
+
+    /* FOOTER */
+    .footer-content-row { flex-direction: column; align-items: center; gap: 2.5rem; }
+    .footer-left-block { max-width: 100%; align-items: center; text-align: center; }
+    .brand-col .footer-logo { margin: 0 auto 1.5rem auto; height: 120px; }
+    .footer-right-block { flex-direction: column; gap: 1.5rem; }
+
+    /* APAGAR ANIMACIONES DE SCROLL EN MÓVILES */
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+    /* index del team */
+    .nav-equipo {
+        padding: 1rem 1.5rem;
+            }
+    .nav-logo {
+        height: 35px;
+            }
+    .equipo-hero h1 {
+        font-size: 2.2rem;
+            }
+    .equipo-hero p {
+        font-size: 0.95rem;
+            }
+    .categoria-titulo {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem 0;
+            }
+    .member-img-box {
+        height: 280px; /* Tarjetas ligeramente más cortas en celulares */
+            }
+    .member-info {
+        padding: 1.2rem;
+            }
+    .member-name {
+        font-size: 1.15rem;
+            }
+
 }
 
-/* --- COLUMNA DE TEXTO --- */
-.diseno-texto {
-    flex: 1; /* Toma la mitad del espacio */
-}
-
-.diseno-texto h2 {
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-size: 2.8rem;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    line-height: 1.1;
-}
-
-.diseno-texto h2 span {
-    color: var(--primary, #fda417);
-}
-
-.diseno-texto p {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1.1rem;
-    color: #cccccc;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-/* Ficha Técnica (Lista de Especificaciones) */
-.specs-list {
-    list-style: none;
-    padding: 0;
-}
-
-.specs-list li {
-    font-family: var(--font-text, 'Inter', sans-serif);
-    font-size: 1rem;
-    color: #e0e0e5;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.03); /* Cajas semi-transparentes */
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--primary, #fda417); /* Línea naranja al costado */
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-/* Efecto al pasar el mouse por cada característica */
-.specs-list li:hover {
-    transform: translateX(10px); /* Se mueve un poco a la derecha */
-    background: rgba(255, 255, 255, 0.08); /* Se ilumina ligeramente */
-}
-
-.specs-list i {
-    color: var(--primary, #fda417);
-    font-size: 1.2rem;
-    width: 25px; /* Mantiene alineados los textos */
-    text-align: center;
-}
-
-/* --- COLUMNA DE IMAGEN --- */
-.diseno-imagen {
-    flex: 1; /* Toma la otra mitad del espacio */
-    position: relative;
-}
-
-.diseno-imagen img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* Sombra 3D profunda */
-    object-fit: cover;
-    display: block;
-}
-
-/* Etiqueta Naranja Flotante */
-.diseno-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: var(--primary, #fda417);
-    color: black;
-    font-family: var(--font-heading, 'Orbitron', sans-serif);
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    text-transform: uppercase;
-    box-shadow: 0 10px 20px rgba(253, 164, 23, 0.4);
-    letter-spacing: 1px;
+@media (max-width: 600px) {
+    .fila-iconos-rs { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    .item-rs i { font-size: 2rem; }
+    .item-rs p { font-size: 0.8rem; }
 }

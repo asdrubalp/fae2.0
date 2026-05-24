@@ -11,318 +11,207 @@
     <script src="style/Script.js" defer></script>
 </head>
 <body>
+    
     <header id="principal">
-    
-    <div class="titulo-pagina-inicio">
-        <img class="imagen-titulo" src="style/img/Team Formula Sae Ucv Venezuela/2. EL IMAGOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Imagotipo SAE UCV">
-        <div id="botones-titulo">
-            <a href="#principal" class="botones-de-inicio">Team</a>
-            <a href="#historia" class="botones-de-inicio">Historia</a>
-            <a href="#evento" class="botones-de-inicio">Evento</a>
-            <a href="#donaciones" class="botones-de-inicio boton-destacado">Donaciones</a>
-        </div>
-    </div>            
-    
-    <div id="Somo-Formula-Sae">
-        <img class="img-Somo-Formula-Sae" src="style/img/Team Formula Sae Ucv Venezuela/3. EL ISOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Isotipo SAE">
-        
-        <div class="contenedor-texto-hero">
-            <span class="texto-somos-team-formula-sae">SOMOS EL</span>
-            <h1 class="texto-somos-team-formula-sae2">TEAM SAE</h1>
-            <h1 class="texto-somos-team-formula-sae3">FORMULA UCV</h1>
-            <h1 class="texto-somos-team-formula-sae4">VENEZUELA</h1>
-        </div>
-    </div>
+        <div class="titulo-pagina-inicio">
+            <img class="imagen-titulo" src="style/img/Team Formula Sae Ucv Venezuela/2. EL IMAGOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Imagotipo SAE UCV">
+            
+            <button id="menu-toggle" class="menu-hamburguesa">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-</header>
+            <div id="botones-titulo">
+                <a href="#equipo" class="botones-de-inicio">Team</a>
+                <a href="#historia" class="botones-de-inicio">Historia</a>
+                <a href="#evento" class="botones-de-inicio">Evento</a>
+                <a href="#donaciones" class="botones-de-inicio boton-destacado">Donaciones</a>
+            </div>
+        </div>            
+        
+        <div id="Somo-Formula-Sae">
+            <img class="img-Somo-Formula-Sae reveal reveal-left" src="style/img/Team Formula Sae Ucv Venezuela/3. EL ISOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Isotipo SAE">
+            
+            <div class="contenedor-texto-hero reveal reveal-right">
+                <span class="texto-somos-team-formula-sae">SOMOS EL</span>
+                <h1 class="texto-somos-team-formula-sae2">TEAM SAE</h1>
+                <h1 class="texto-somos-team-formula-sae3">FORMULA UCV</h1>
+                <h1 class="texto-somos-team-formula-sae4">VENEZUELA</h1>
+            </div>
+        </div>
+    </header>
 
     <section class="event-section" id="evento">
-        <div class="event-container">
+        <div class="event-container reveal reveal-bottom">
             <div class="event-info">
                 <h2>Próximo Evento</h2>
                 <p class="fecha">30 de Julio, 2026</p>
             </div>
             <div class="simple-countdown">
-                <div class="time-box">
-                    <span id="dias" class="number">00</span>
-                    <span class="label">Días</span>
-                </div>
-                <span class="separator">:</span>
-                
-                <div class="time-box">
-                    <span id="horas" class="number">00</span>
-                    <span class="label">Horas</span>
-                </div>
-                <span class="separator">:</span>
-                
-                <div class="time-box">
-                    <span id="minutos" class="number">00</span>
-                    <span class="label">Minutos</span>
-                </div>
-                <span class="separator">:</span>
-                
-                <div class="time-box">
-                    <span id="segundos" class="number">00</span>
-                    <span class="label">Segundos</span>
-                </div>
+                <div class="time-box"><span id="dias" class="number">00</span><span class="label">Días</span></div><span class="separator">:</span>
+                <div class="time-box"><span id="horas" class="number">00</span><span class="label">Horas</span></div><span class="separator">:</span>
+                <div class="time-box"><span id="minutos" class="number">00</span><span class="label">Minutos</span></div><span class="separator">:</span>
+                <div class="time-box"><span id="segundos" class="number">00</span><span class="label">Segundos</span></div>
             </div>
         </div>
     </section>
 
     <section id="donaciones" class="donaciones-minimal">
-    <div class="donaciones-container-min">
-        
-        <div class="donaciones-texto-min">
-            <h2>Impulsa la Ingeniería <span>Venezolana</span></h2>
-            <p>Diseñar y construir un vehículo de carreras requiere más que talento; requiere recursos. Ayúdanos a llevar la bandera de la UCV a la línea de meta internacional.</p>
+        <div class="donaciones-container-min reveal reveal-scale">
+            <div class="donaciones-texto-min">
+                <h2>Impulsa la Ingeniería <span>Venezolana</span></h2>
+                <p>Diseñar y construir un vehículo de carreras requiere más que talento; requiere recursos. Ayúdanos a llevar la bandera de la UCV a la línea de meta internacional.</p>
+            </div>
+            <div class="donaciones-tracker-min">
+                <div class="tracker-info">
+                    <span class="monto-actual">$7,500 <span class="usd-text">USD Recaudados</span></span>
+                    <span class="monto-meta">Meta: $10,000</span>
+                </div>
+                <div class="barra-fondo-min">
+                    <div class="barra-relleno-min" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="donaciones-razones-min">
+                <div class="razon-item"><i class="fa-solid fa-gears"></i><span>Piezas y Ensamblaje</span></div>
+                <div class="razon-item"><i class="fa-solid fa-plane-departure"></i><span>Logística</span></div>
+                <div class="razon-item"><i class="fa-solid fa-flag-checkered"></i><span>Inscripción</span></div>
+            </div>
+            <a href="#link-de-pago" class="btn-donar-min">Acelera Nuestro Sueño</a>
         </div>
+    </section>
 
-        <div class="donaciones-tracker-min">
-            <div class="tracker-info">
-                <span class="monto-actual">$7,500 <span class="usd-text">USD Recaudados</span></span>
-                <span class="monto-meta">Meta: $10,000</span>
-            </div>
-            <div class="barra-fondo-min">
-                <div class="barra-relleno-min" style="width: 75%;"></div>
-            </div>
-        </div>
-
-        <div class="donaciones-razones-min">
-            <div class="razon-item">
-                <i class="fa-solid fa-gears"></i>
-                <span>Piezas y Ensamblaje</span>
-            </div>
-            <div class="razon-item">
-                <i class="fa-solid fa-plane-departure"></i>
-                <span>Logística</span>
-            </div>
-            <div class="razon-item">
-                <i class="fa-solid fa-flag-checkered"></i>
-                <span>Inscripción</span>
-            </div>
-        </div>
-
-        <a href="#link-de-pago" class="btn-donar-min">Acelera Nuestro Sueño</a>
-
-    </div>
-</section>
-
-<section id="Nuestro-pasado" class="seccion-mitad">
-    
-    <div class="mitad-texto">
-        <h2>Nuestro Pasado</h2>
-        <div class="linea-naranja"></div>
-        <p>En el año 2018 un grupo de estudiantes de la Universidad Central de Venezuela decidieron formar un equipo para participar en la competencia internacional Formula SAE, con el objetivo de diseñar, construir y competir con un auto de carreras.</p>
-        <p>Desde entonces, el equipo ha trabajado arduamente para mejorar su desempeño y lograr sus metas en cada competencia.</p>
-    </div>
-
-    <div class="mitad-imagen pasado-img"></div>
-</section>
-
-<section id="nuestro-presente" class="seccion-texto-centrado">
-    <div class="contenedor-texto-amplio">
-        <h2>Nuestro Presente</h2>
-        <div class="linea-naranja centrada"></div>
-        <p>Actualmente, el equipo está compuesto por estudiantes de diversas carreras y niveles académicos de la UCV, quienes trabajan en conjunto para diseñar y construir un auto de carreras competitivo.</p>
-        <p>Hemos participado en varias competencias nacionales e internacionales, obteniendo buenos resultados y reconocimiento continuo por nuestro desempeño en la pista y en los talleres.</p>
-    </div>
-</section>
-
-<section id="nuestro-futuro" class="seccion-mitad1">
-
-    <div class="mitad-imagen futuro-img"></div>
-    
-    <div class="mitad-texto">
-        <h2>Nuestro Futuro</h2>
-        <div class="linea-naranja"></div>
-        <p>El equipo tiene como objetivo seguir mejorando su desempeño en las competencias y lograr un lugar destacado en la competencia internacional Formula SAE, con el fin de consolidar el nivel de la ingeniería nacional en el exterior.</p>
-        <p>Además, buscamos fomentar activamente el interés por la tecnología automotriz entre los estudiantes de la UCV, contribuyendo directamente al desarrollo industrial y de proyectos de vanguardia en Venezuela.</p>
-    </div>
-    
-</section>
-
-<section id="diseno-anterior" class="seccion-diseno-anterior">
-    <div class="diseno-container">
-        
-        <div class="diseno-texto">
-            <h2>Nuestro <span>Diseño Anterior</span></h2>
+    <section id="historia" class="seccion-mitad">
+        <div class="mitad-texto reveal reveal-left">
+            <h2>Nuestro Pasado</h2>
             <div class="linea-naranja"></div>
-            <p>Antes de mirar hacia el futuro, honramos el vehículo que sentó las bases de nuestra escudería. Un modelo diseñado con pasión y precisión que nos permitió superar nuestros propios límites en la pista y aprender valiosas lecciones de ingeniería.</p>
-            
-            <ul class="specs-list">
-                <li><i class="fa-solid fa-gauge-high"></i> <strong>Chasis:</strong> Estructura tubular de acero de alta resistencia.</li>
-                <li><i class="fa-solid fa-weight-hanging"></i> <strong>Peso Total:</strong> 250 kg (Aproximado).</li>
-                <li><i class="fa-solid fa-bolt"></i> <strong>Motorización:</strong> Motor de combustión optimizado para competición.</li>
-                <li><i class="fa-solid fa-trophy"></i> <strong>Logro:</strong> Consolidación del equipo en competencias nacionales.</li>
-            </ul>
+            <p>En el año 2018 un grupo de estudiantes de la Universidad Central de Venezuela decidieron formar un equipo para participar en la competencia internacional Formula SAE, con el objetivo de diseñar, construir y competir con un auto de carreras.</p>
+            <p>Desde entonces, el equipo ha trabajado arduamente para mejorar su desempeño y lograr sus metas en cada competencia.</p>
         </div>
-        
-        <div class="diseno-imagen">
-            <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/1. MOCKUPS.JPG" alt="Vehículo anterior SAE UCV">
-            
-            <div class="diseno-badge">Generación Anterior</div>
+        <div class="mitad-imagen pasado-img reveal reveal-right"></div>
+    </section>
+
+    <section id="nuestro-presente" class="seccion-texto-centrado">
+        <div class="contenedor-texto-amplio reveal reveal-bottom">
+            <h2>Nuestro Presente</h2>
+            <div class="linea-naranja centrada"></div>
+            <p>Actualmente, el equipo está compuesto por estudiantes de diversas carreras y niveles académicos de la UCV, quienes trabajan en conjunto para diseñar y construir un auto de carreras competitivo.</p>
+            <p>Hemos participado en varias competencias nacionales e internacionales, obteniendo buenos resultados y reconocimiento continuo por nuestro desempeño en la pista y en los talleres.</p>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="equipo" class="seccion-team">
-    <div class="team-container">
-        
-        <div class="team-header">
-            <h2>Nuestro <span>Team</span> Formula SAE</h2>
-            <p>El motor detrás de la máquina. Conoce a quienes hacen esto posible y únete a nosotros.</p>
+    <section id="nuestro-futuro" class="seccion-mitad1">
+        <div class="mitad-imagen futuro-img reveal reveal-left"></div>
+        <div class="mitad-texto reveal reveal-right">
+            <h2>Nuestro Futuro</h2>
+            <div class="linea-naranja"></div>
+            <p>El equipo tiene como objetivo seguir mejorando su desempeño en las competencias y lograr un lugar destacado en la competencia internacional Formula SAE, con el fin de consolidar el nivel de la ingeniería nacional en el exterior.</p>
+            <p>Además, buscamos fomentar activamente el interés por la tecnología automotriz entre los estudiantes de la UCV, contribuyendo directamente al desarrollo industrial y de proyectos de vanguardia en Venezuela.</p>
         </div>
+    </section>
 
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="card-img reclutamiento-bg">
-                    <i class="fa-solid fa-users"></i>
+    <section id="diseno-anterior" class="seccion-diseno-anterior">
+        <div class="diseno-container">
+            <div class="diseno-texto reveal reveal-left">
+                <h2>Nuestro <span>Diseño Anterior</span></h2>
+                <div class="linea-naranja"></div>
+                <p>Antes de mirar hacia el futuro, honramos el vehículo que sentó las bases de nuestra escudería. Un modelo diseñado con pasión y precisión que nos permitió superar nuestros propios límites en la pista y aprender valiosas lecciones de ingeniería.</p>
+                <ul class="specs-list">
+                    <li><i class="fa-solid fa-gauge-high"></i> <strong>Chasis:</strong> Estructura tubular de acero de alta resistencia.</li>
+                    <li><i class="fa-solid fa-weight-hanging"></i> <strong>Peso Total:</strong> 250 kg (Aproximado).</li>
+                    <li><i class="fa-solid fa-bolt"></i> <strong>Motorización:</strong> Motor de combustión optimizado para competición.</li>
+                    <li><i class="fa-solid fa-trophy"></i> <strong>Logro:</strong> Consolidación del equipo en competencias nacionales.</li>
+                </ul>
+            </div>
+            <div class="diseno-imagen reveal reveal-right">
+                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/1. MOCKUPS.JPG" alt="Vehículo anterior SAE UCV">
+                <div class="diseno-badge">Generación Anterior</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo" class="seccion-team">
+        <div class="team-container">
+            <div class="team-header reveal reveal-bottom">
+                <h2>Nuestro <span>Team</span> Formula SAE</h2>
+                <p>El motor detrás de la máquina. Conoce a quienes hacen esto posible y únete a nosotros.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal reveal-bottom">
+                    <div class="card-img reclutamiento-bg"><i class="fa-solid fa-users"></i></div>
+                    <div class="card-content">
+                        <h3>El Team Formula SAE</h3>
+                        <p>Somos un equipo de estudiantes de la UCV de diferentes carreras, encargados de todo lo referente a nuestra escudería, desde la ingeniería y construcción del vehículo, hasta el marketing y la gestión.</p>
+                        <a href="indes (team).html" class="btn-team">Conoce al Team</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>El Team Formula SAE</h3>
-                    <p>Somos un equipo de estudiantes de la UCV de diferentes carreras, encargados de todo lo referente a nuestra escudería, desde la ingeniería y construcción del vehículo, hasta el marketing y la gestión.</p>
-                    <a href="#conoce-mas" class="btn-team">Conoce al Team</a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="card-img reclutamiento-bg">
-                    <i class="fa-solid fa-users-gear"></i>
-                </div>
-                <div class="card-content">
-                    <h3>¿Quieres ser parte del Team?</h3>
-                    <ul class="lista-requisitos">
-                        <li><i class="fa-solid fa-check"></i> Ser estudiante regular de la universidad.</li>
-                        <li><i class="fa-solid fa-calendar-days"></i> Estar pendiente a las fechas de reclutamiento.</li>
-                        <li><i class="fa-solid fa-clipboard-check"></i> Completar con éxito el proceso de selección.</li>
-                    </ul>
-                    <a href="#unete" class="btn-team btn-outline">Postúlate Aquí</a>
+                <div class="team-card reveal reveal-bottom" style="transition-delay: 0.2s;">
+                    <div class="card-img reclutamiento-bg"><i class="fa-solid fa-users-gear"></i></div>
+                    <div class="card-content">
+                        <h3>¿Quieres ser parte del Team?</h3>
+                        <ul class="lista-requisitos">
+                            <li><i class="fa-solid fa-check"></i> Ser estudiante regular de la universidad.</li>
+                            <li><i class="fa-solid fa-calendar-days"></i> Estar pendiente a las fechas de reclutamiento.</li>
+                            <li><i class="fa-solid fa-clipboard-check"></i> Completar con éxito el proceso de selección.</li>
+                        </ul>
+                        <a href="#unete" class="btn-team btn-outline">Postúlate Aquí</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="galeria" class="seccion-galeria">
-    <div class="galeria-header">
-        <h2>Nuestra <span>Galería</span></h2>
-        <div class="linea-naranja centrada"></div>
-        <p>Desliza para ver el diseño, la ingeniería y la pasión de nuestro equipo.</p>
-    </div>
-
-    <div class="carrusel-wrapper">
-        <button class="btn-carrusel btn-izq" onclick="moverCarrusel(-1)">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <div class="carrusel-track" id="pista-galeria">
-            
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/1. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/2. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/3. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/4. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/5. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-
-            <div class="galeria-item">
-                <img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/6. MOCKUPS.JPG" alt="Taller">
-                <div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div>
-            </div>
-            
-            </div>
-
-        <button class="btn-carrusel btn-der" onclick="moverCarrusel(1)">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-</section>
-
-<section id="Redes-sociales" class="redes-lineal-min">
-    <div class="redes-container-min">
-        
-        <div class="redes-header-min">
-            <h2>Nuestras <span>Redes Sociales</span></h2>
+    <section id="galeria" class="seccion-galeria">
+        <div class="galeria-header reveal reveal-bottom">
+            <h2>Nuestra <span>Galería</span></h2>
+            <div class="linea-naranja centrada"></div>
+            <p>Desliza para ver el diseño, la ingeniería y la pasión de nuestro equipo.</p>
         </div>
-
-        <div class="fila-iconos-rs">
-            <a href="#" class="item-rs" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-                <p>Instagram <br><span>@fsae</span></p>
-            </a>
-            <a href="#" class="item-rs" target="_blank">
-                <i class="fa-brands fa-tiktok"></i>
-                <p>TikTok <br><span>@fsae</span></p>
-            </a>
-            <a href="#" class="item-rs" target="_blank">
-                <i class="fa-brands fa-facebook"></i>
-                <p>Facebook <br><span>@fsae</span></p>
-            </a>
-            <a href="#" class="item-rs" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
-                <p>Twitter <br><span>@fsae</span></p>
-            </a>
-            <a href="#" class="item-rs" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-                <p>WhatsApp <br><span>@fsae</span></p>
-            </a>
+        <div class="carrusel-wrapper reveal reveal-scale">
+            <button class="btn-carrusel btn-izq" onclick="moverCarrusel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="carrusel-track" id="pista-galeria">
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/1. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/2. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/3. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/4. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/5. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Team Formula Sae Ucv Venezuela/6. MOCKUPS/6. MOCKUPS.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+            </div>
+            <button class="btn-carrusel btn-der" onclick="moverCarrusel(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<footer class="footer-sae">
-    <div class="footer-container">
-        
-        <div class="footer-col brand-col">
-            <img src="style/img/Team Formula Sae Ucv Venezuela/2. EL IMAGOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Logo SAE UCV" class="footer-logo">
-            <p>Diseñamos, construimos y competimos. Llevando la ingeniería de la Universidad Central de Venezuela al máximo nivel internacional.</p>
+    <section id="Redes-sociales" class="redes-lineal-min">
+        <div class="redes-container-min reveal reveal-bottom">
+            <div class="redes-header-min">
+                <h2>Nuestras <span>Redes Sociales</span></h2>
+            </div>
+            <div class="fila-iconos-rs">
+                <a href="#" class="item-rs" target="_blank"><i class="fa-brands fa-instagram"></i><p>Instagram <br><span>@fsae</span></p></a>
+                <a href="#" class="item-rs" target="_blank"><i class="fa-brands fa-tiktok"></i><p>TikTok <br><span>@fsae</span></p></a>
+                <a href="#" class="item-rs" target="_blank"><i class="fa-brands fa-facebook"></i><p>Facebook <br><span>@fsae</span></p></a>
+                <a href="#" class="item-rs" target="_blank"><i class="fa-brands fa-twitter"></i><p>Twitter <br><span>@fsae</span></p></a>
+                <a href="#" class="item-rs" target="_blank"><i class="fa-brands fa-whatsapp"></i><p>WhatsApp <br><span>@fsae</span></p></a>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col links-col">
-            <h3>Explorar</h3>
-            <ul>
-                <li><a href="#principal">Inicio</a></li>
-                <li><a href="#historia">Nuestra Historia</a></li>
-                <li><a href="#equipo">El Team</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#donaciones">Donaciones</a></li>
-            </ul>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content-row">
+                <div class="footer-left-block">
+                    <p class="footer-address"><span>Dirección:</span> Universidad Central de Venezuela (UCV). Facultad de Ingenieria Caracas. Distrito Capital, Venezuela.</p>
+                </div>
+                <div class="footer-right-block">
+                    <div class="contact-icon-item"><div class="icon-circle"><i class="fa-solid fa-gears"></i></div><span>contacto@fsaeucv.com</span></div>
+                    <div class="contact-icon-item"><div class="icon-circle"><i class="fa-solid fa-clipboard-check"></i></div><span>contacto@fsaeucv.com</span></div>
+                    <div class="contact-icon-item"><div class="icon-circle"><i class="fa-solid fa-flag-checkered"></i></div><span>+58 000-00-00</span></div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom-row">
+                <p>Team Formula SAE UCV • Derechos Reservados • Design & Built by AdrubalP.</p>
+            </div>
         </div>
-
-        <div class="contact-col">
-            <h3>Contacto</h3>
-            <ul>
-                <li><i class="fa-solid fa-location-dot"></i> Universidad Central de Venezuela (UCV), Caracas.</li>
-                <li><i class="fa-solid fa-envelope"></i> contacto@fsaeucv.com</li>
-                <li><i class="fa-solid fa-phone"></i> +58 (123) 456-7890</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Team Formula SAE UCV. Todos los derechos reservados.</p>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
