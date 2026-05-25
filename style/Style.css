@@ -28,6 +28,24 @@ body {
 }
 
 /* =========================================
+   TEXTOS JUSTIFICADOS (PC, TABLET Y MÓVIL)
+   ========================================= */
+.mitad-texto p,               /* Historia (Pasado y Futuro) */
+.contenedor-texto-amplio p,   /* Presente */
+.diseno-texto p,              /* Diseño Anterior */
+.card-content p,              /* Tarjetas del Team (Inicio) */
+.donaciones-texto-min p,      /* Texto de Donaciones */
+.equipo-hero p                /* Texto introductorio en index (team).html */
+{
+    text-align: justify !important; /* Fuerza la justificación en cualquier pantalla */
+    
+    /* Efecto "Libro": Separa en sílabas automáticamente para evitar huecos blancos en celulares */
+    -webkit-hyphens: auto !important;
+    -ms-hyphens: auto !important;
+    hyphens: auto !important;
+}
+
+/* =========================================
    HEADER & HERO (INICIO)
    ========================================= */
 #principal {
@@ -161,9 +179,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem; 
+    gap: 2rem; 
     flex-wrap: wrap; 
-    max-width: 1000px;
+    max-width: 1500px;
     width: 100%;
 }
 .event-info { text-align: left; }
@@ -793,6 +811,15 @@ body {
     }
 
     .ocupar-espacio {
+        display: none;
+    }
+
+    /* CORRECCIÓN DE ENCUADRE: Centrar el fondo en el carro */
+    #principal {
+        background-position: 75% center; /* Mueve horizontalmente el fondo para enfocar el carro */
+    }
+
+    .footer-right-block {
         display: none;
     }
 
