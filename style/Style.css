@@ -408,6 +408,10 @@ body {
         /* =========================================
            ENCABEZADO DE LA PÁGINA (HERO)
            ========================================= */
+        .body-team{
+            background-color: #27272c;
+        }
+        
         .equipo-hero {
             text-align: center;
             padding: 4rem 2rem 2rem 2rem;
