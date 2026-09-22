@@ -171,12 +171,12 @@ body {
 .event-section {
     background-color: #274683; 
     padding: 3rem 0rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 .event-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 2rem; 
@@ -432,7 +432,7 @@ body {
         
         .equipo-hero {
             text-align: center;
-            padding: 4rem 2rem 2rem 2rem;
+            padding: 4rem 2rem 0rem 2rem;
             background: linear-gradient(rgba(17, 17, 17, 0.5), var(--bg-dark)), url("style/img/upscalemedia-transformed.png");
             background-size: cover;
             background-position: center;
@@ -556,6 +556,382 @@ body {
         .member-card p{
             font-size: 1rem;
         }
+
+        /* =========================================
+   PÁGINA DE DONACIONES
+   ========================================= */
+.seccion-donaciones {
+    padding: 40px 20px 20px 20px; /* Espacio arriba para que el menú no lo tape */
+    background-color: linear-gradient(rgba(17, 17, 17, 0.5), var(--bg-dark)), url("style/img/upscalemedia-transformed.png");
+    min-height: 100vh;
+}
+
+.contenedor-donaciones {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contenedor-donaciones .titulo-principal {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 1rem;
+    font-family: 'Audiowide', sans-serif; /* Usa tu fuente tecnológica */
+}
+
+.texto-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Grid para que las tarjetas se pongan lado a lado en PC y una sobre otra en móviles */
+.grid-donaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.tarjeta-donacion {
+    background-color: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #274683; /* Borde superior con el color SAE */
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-donacion:hover {
+    transform: translateY(-5px); /* Efecto de salto al pasar el mouse */
+}
+
+.icono-pago {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-donacion h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 1.5rem;
+}
+
+.datos-pago p {
+    font-size: 0.95rem;
+    color: #444;
+    margin: 8px 0;
+    text-align: left; /* Alineamos los datos a la izquierda para mejor lectura */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.contacto-patrocinio {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+.contacto-patrocinio h3 {
+    margin-top: 0;
+    color: #fda417;
+}
+
+.btn-patrocinio {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background-color: #fda417;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.btn-patrocinio:hover {
+    background-color: #c98313;
+}
+
+.icono-pago {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #274683; /* Aplica el naranja SAE al icono */
+    transition: transform 0.3s ease;
+}
+
+/* Un pequeño efecto para que el icono crezca al pasar el mouse */
+.tarjeta-donacion:hover .icono-pago {
+    transform: scale(1.1);
+}
+
+.qr-container {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil de separación */
+    text-align: center;
+}
+
+.qr-texto {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.qr-imagen {
+    width: 180px; /* Tamaño ideal: escaneable pero no invasivo */
+    height: auto;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    border: 4px solid #ffffff; /* Marco blanco para que el QR resalte y funcione bien */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.qr-imagen:hover {
+    transform: scale(1.05); /* Efecto de ligero acercamiento al pasar el mouse */
+}
+
+.home-donations {
+    background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+    border-top: 4px solid #274683;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.donations-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.donations-title {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.donations-text {
+    font-family: 'Achieve', sans-serif;
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.btn-donar-home {
+    display: inline-block;
+    background-color: #0056b3; 
+    color: #ffffff;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn-donar-home:hover {
+    background-color: #004494; /* Un azul un poco más oscuro para el efecto hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+/* ========================================= */
+/* ESTILOS DE LA PÁGINA AYUDA.HTML (DONACIONES) */
+/* ========================================= */
+
+/* Cabecera */
+.ayuda-hero {
+    background: linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)), url('../style/img/2.jpg') center/cover;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 4px solid #274683;
+}
+
+.ayuda-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+span.clase1{
+    color: var(--primary);
+}
+
+span.clase2{
+    color: #c22319;
+}
+
+.ayuda-subtitle {
+    font-family: 'Achieve', sans-serif;
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Instrucciones de Donación */
+.instrucciones-donacion {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+}
+
+.instrucciones-title {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+}
+
+.paso-card {
+    background-color: #222222;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333333;
+    transition: transform 0.3s ease;
+}
+
+.paso-card:hover {
+    transform: translateY(-5px);
+}
+
+.paso-card.destacado1{
+    border-color: #274683;
+}
+
+.paso-card.destacado2{
+    border-color: #fda417;
+}
+
+.paso-card.destacado3{
+    border-color: #c22319;
+}
+
+.paso-numero1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #274683;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.paso-numero2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #fda417;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.paso-numero3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #c22319;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.paso-titulo {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.paso-texto {
+    font-family: 'Achieve', sans-serif;
+    color: #bbbbbb;
+    line-height: 1.5;
+}
+
+.paso-texto strong {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* Botón de Donación */
+.contenedor-boton {
+    text-align: center;
+}
+
+.btn-donar-oficial {
+    display: inline-block;
+    background-color: #274683;
+    color: #e6e6e6;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1.3rem;
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(39, 70, 131, 0.815);
+}
+
+.btn-donar-oficial:hover {
+    background-color: #274683;
+    box-shadow: 0 4px 15px rgb(39, 70, 131);
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+.grid-donaciones h4{
+    color: rgb(105, 105, 105);
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    word-spacing: 5px;
+}
+
+.video-propio-container {
+    max-width: 1000px; 
+    margin: 40px auto; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 2px solid #0056b3; 
+}
+
+.video-propio-container video {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+.espacio1{
+    display: none;
+}
+
+.espacio{
+    display: none;
+}
 
 /* =========================================
    DISEÑO RESPONSIVO (MEDIA QUERIES MAESTRAS)
@@ -823,7 +1199,192 @@ body {
         display: none;
     }
 
+    /* =========================================
+       DONACIONES EN MÓVILES
+       ========================================= */
+    .seccion-donaciones {
+        padding: 50px 15px 40px 15px; /* Reducimos los márgenes laterales y superiores */
+    }
+
+    .contenedor-donaciones .titulo-principal {
+        font-size: 1.8rem; /* Achicamos el título para que no se desborde o se parta feo */
+    }
+
+    .texto-intro {
+        font-size: 0.95rem; /* Texto un poco más pequeño */
+        margin-bottom: 2rem;
+    }
+
+    .grid-donaciones {
+        grid-template-columns: 1fr; /* Fuerza a que las tarjetas se apilen una exactamente debajo de la otra */
+        gap: 15px;
+    }
+
+    .tarjeta-donacion {
+        padding: 1.5rem 1rem; /* Tarjetas un poco más compactas para aprovechar el espacio */
+    }
+
+    .contacto-patrocinio {
+        padding: 1.5rem 1rem;
+    }
+
+    .btn-patrocinio {
+        width: 100%; /* El botón ocupa todo el ancho de la pantalla para que sea fácil de tocar con el dedo pulgar */
+        box-sizing: border-box;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .donations-title {
+        font-size: 1.6rem;  /* Título más pequeño para que no ocupe toda la pantalla */
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+
+    .donations-text {
+        font-size: 1rem;    /* Texto de lectura adaptado a pantallas chicas */
+        margin-bottom: 25px;
+        text-align: justify; /* Opcional: mejora la lectura de párrafos largos en móvil */
+    }
+
+    .btn-donar-min {
+        display: block;      /* Hace que el botón se comporte como un bloque */
+        width: 100%;         /* Ocupa casi todo el ancho de la pantalla */
+        max-width: 320px;    /* Límite máximo para que no se vea exagerado */
+        margin: 0 auto;      /* Centra el botón perfectamente */
+        font-size: 1rem;     /* Letra del botón más pequeña */
+        padding: 15px 10px;  /* Ajuste de los bordes del botón */
+        box-sizing: border-box;
+    }
+
+    /* --- Ajustes Globales (Cabeceras Hero) --- */
+    .ayuda-hero {
+        padding: 60px 15px; /* Reducimos el espacio interior gigante */
+    }
+
+    .ayuda-title {
+        font-size: 2rem; /* Título principal más compacto */
+        line-height: 1.2;
+    }
+
+    .ayuda-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    /* --- Ajustes para Ayudas.html (Pasos de Egresados UCV) --- */
+    .instrucciones-donacion {
+        padding: 50px 15px;
+    }
+
+    .instrucciones-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .pasos-grid {
+        gap: 20px; /* Menos espacio entre las tarjetas de pasos */
+    }
+
+    .paso-card {
+        padding: 20px 15px;
+    }
+
+    .paso-numero {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-donar-oficial {
+        display: block; /* Convertimos el botón en un bloque completo */
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        padding: 15px 10px;
+        box-sizing: border-box; /* Evita que el padding rompa el ancho */
+    }
+
+    /* --- Ajustes para Donaciones.html (Tarjetas de métodos) --- */
+    .donaciones-opciones {
+        padding: 40px 15px;
+    }
+
+    .opciones-grid {
+        gap: 20px;
+    }
+
+    .donacion-card {
+        padding: 25px 15px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .dato-destacado {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+
+    .btn-donar-card {
+        display: block;
+        width: 100%; /* Botones de 100% de ancho dentro de la tarjeta */
+        box-sizing: border-box;
+        padding: 12px 10px;
+    }
+
+    /* Ajuste especial para los datos bancarios y QR */
+    .datos-bancarios {
+        padding: 10px;
+    }
+
+    .datos-bancarios li {
+        font-size: 0.95rem;
+        word-wrap: break-word; /* Evita que números de cuenta largos rompan la tarjeta */
+    }
+
+    .qr-imagen {
+        width: 130px; /* El QR un poco más pequeño para pantallas estrechas */
+        border-width: 3px;
+    }
+
+    .video-propio-container {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 70%;
+        width: 92.5%;
+        margin: 20px 15px; /* Reducimos los márgenes para no desperdiciar espacio en la pantallita */
+        border-radius: 4px; /* Suavizamos un poco el borde en móviles */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .espacio1{
+        margin: 3vh;
+        display: block;
+    }
+
+    .espacio1 p{
+        color:#333
+    }
+
+    .espacio{
+        margin: 4vh;
+        display: block;
+    }
+
+    .espacio p{
+        color: #333
+    }
 }
+
 
 @media (max-width: 600px) {
     .fila-iconos-rs { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
@@ -900,5 +1461,13 @@ body {
     
     .ocupar-espacio {
         display: none;
+    }
+
+    .ayuda-title {
+        font-size: 1.6rem;
+    }
+    
+    .instrucciones-title {
+        font-size: 1.4rem;
     }
 }
