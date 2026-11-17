@@ -1,2 +1,2 @@
-# Team formula sae ucv 
-este es el repositorio de prueba de la web de nuestro equipo
+# Team formula sae ucv
+La pagina Web oficial del Team formula sae UCV venezuela 
