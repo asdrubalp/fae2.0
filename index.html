@@ -22,130 +22,96 @@
     <script src="style/Script.js" defer></script>
 </head>
 <body>
-    <header id="principal">
-        <div class="titulo-pagina-inicio">
-            <img class="imagen-titulo" src="style/img/Team Formula Sae Ucv Venezuela/2. EL IMAGOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Imagotipo SAE UCV">
-            
-            <button id="menu-toggle" class="menu-hamburguesa">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+<header id="principal">
+  <div class="titulo-pagina-inicio">
+    <a href="#principal"><img class="imagen-titulo" src="style/img/Team Formula Sae Ucv Venezuela/2. EL IMAGOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Imagotipo SAE UCV"></a>
+    <button id="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="botones-titulo"><i class="fa-solid fa-bars"></i></button>
+    <nav id="botones-titulo" aria-label="Principal">
+      <a href="#historia" class="botones-de-inicio">Historia</a>
+      <a href="#diseno-anterior" class="botones-de-inicio">UCV-15</a>
+      <a href="#equipo" class="botones-de-inicio">Team</a>
+      <a href="#galeria" class="botones-de-inicio">Galería</a>
+      <a href="#donaciones" class="botones-de-inicio boton-destacado">Donaciones</a>
+    </nav>
+  </div>
+  <img class="hero-iso" src="style/img/Team Formula Sae Ucv Venezuela/3. EL ISOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="" aria-hidden="true">
+  <div class="hero-texto">
+    <h1>Somos el Team Fórmula SAE UCV <span>Venezuela</span></h1>
+    <p>Estudiantes de la Universidad Central de Venezuela que diseñan, construyen y compiten con vehículos de carreras a nivel internacional.</p>
+    <div class="hero-cta"><a href="Donaciones.html" class="btn-donar-min">Acelera nuestro sueño</a><a href="#historia" class="btn-fantasma">Nuestra historia</a></div>
+  </div>
+  <section id="donaciones" class="don">
+  <div class="don-texto reveal"><h2>Impulsa la ingeniería venezolana</h2>
+    <p>Diseñar y construir un vehículo de carreras requiere más que talento; requiere recursos. Ayúdanos a llevar la bandera de la UCV a la línea de meta internacional.</p>
+    <a href="Donaciones.html" class="btn-donar-min">Acelera nuestro sueño</a></div>
+  <div class="don-panel reveal">
+    <div class="tracker-info"><span class="monto-actual">15% <span class="usd-text">recaudado</span></span><span class="monto-meta">Meta: 100%</span></div>
+    <div class="barra-fondo-min"><div class="barra-relleno-min" style="width:15%"></div></div>
+    <ul class="don-lista">
+      <li><i class="fa-solid fa-gears"></i> Piezas y ensamblaje</li>
+      <li><i class="fa-solid fa-plane-departure"></i> Logística</li>
+      <li><i class="fa-solid fa-flag-checkered"></i> Inscripción</li>
+    </ul>
+  </div>
+</section>
+  <div class="hero-datos">
+    <div><b>2003</b><span>Nace el grupo Fórmula SAE UCV</span></div>
+    <div><b>2005</b><span>Debut en Michigan con el F-05 «Milka Duno»</span></div>
+    <div><b>2015</b><span>El UCV-15 supera todas las pruebas dinámicas</span></div>
+    <div><b>F-27</b><span>Diseño y manufactura del nuevo monoplaza</span></div>
+  </div>
+</header>
 
-            <div id="botones-titulo">
-                <a href="#equipo" class="botones-de-inicio">Team</a>
-                <a href="#historia" class="botones-de-inicio">Historia</a>
-                <a href="#evento" class="botones-de-inicio">Evento</a>
-                <a href="#donaciones" class="botones-de-inicio boton-destacado">Donaciones</a>
-            </div>
-        </div>            
-        
-        <div id="Somo-Formula-Sae">
-            <img class="img-Somo-Formula-Sae reveal reveal-left" src="style/img/Team Formula Sae Ucv Venezuela/3. EL ISOTIPO/4. SAE UCV NEGATIVO (BLANCO)(PNG).PNG" alt="Isotipo SAE">
-            
-            <div class="contenedor-texto-hero reveal reveal-right">
-                <span class="texto-somos-team-formula-sae">SOMOS EL</span>
-                <h1 class="texto-somos-team-formula-sae2">TEAM FÓRMULA</h1>
-                <h1 class="texto-somos-team-formula-sae3">SAE UCV</h1>
-                <h1 class="texto-somos-team-formula-sae4">VENEZUELA</h1>
-            </div>
-        </div>
-    </header>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><div><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i></div><div><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i></div></div></div>
 
-    <section class="event-section" id="evento">
-        <div class="event-container reveal reveal-bottom">
-            <div class="event-info">
-                <h2>PROXIMO EVENTO</h2>
-                <p class="fecha">30 de Julio, 2026</p>
-            </div>
-            <div class="simple-countdown">
-                <div class="time-box"><span id="dias" class="number">00</span><span class="label">Días</span></div><span class="separator">:</span>
-                <div class="time-box"><span id="horas" class="number">00</span><span class="label">Horas</span></div><span class="separator">:</span>
-                <div class="time-box"><span id="minutos" class="number">00</span><span class="label">Minutos</span></div><span class="separator">:</span>
-                <div class="time-box"><span id="segundos" class="number">00</span><span class="label">Segundos</span></div>
-            </div>
-        </div>
-    </section>
+<section id="historia" class="historia">
+  <h2 class="sec-titulo">Nuestra historia</h2>
+  <article class="capitulo c-rojo">
+    <div class="cap-lado"><b>2003<br>2005</b><i>Pasado</i></div>
+    <div class="cap-cuerpo reveal"><h3>Nuestro Pasado</h3>
+<p>Nuestra historia comenzó en el año 2003 con la creación del grupo fórmula SAE UCV, pero nuestro verdadero impacto internacional arrancó en 2005. Ese año, marcamos un hito al llevar a la competencia de Michigan nuestro primer prototipo oficial: el F-05 «Milka Duno», bautizado así en honor a la reconocida piloto venezolana y madrina del equipo.</p>
+<p>¿Y qué logramos en ese histórico debut? Logramos romper las fronteras de la ingeniería nacional, compitiendo por primera vez contra las mejores universidades del mundo y sentando las bases de una escudería que, en años posteriores, llegaría a posicionarse en el codiciado Top 10 global frente a más de 130 competidores internacionales. Aquella participación en 2005 no fue solo una carrera; fue el motor que encendió nuestro legado.</p>
+<figure class="reveal"><img src="style/img/michigan 078.jpg" alt="Competencia en Michigan" loading="lazy"></figure></div>
+  </article>
+  <article id="nuestro-presente" class="capitulo c-naranja">
+    <div class="cap-lado"><b>Hoy</b><i>Presente</i></div>
+    <div class="cap-cuerpo reveal"><h3>Nuestro Presente</h3>
+<p>Hoy, el Team Fórmula SAE-UCV se encuentra en un momento histórico de reconstrucción y reactivación. Tras una década de ausencia en las competiciones internacionales, nos hemos integrado como un equipo multidisciplinario profundamente comprometido con la excelencia técnica; un equipo dedicado a la investigación, el desarrollo, siendo apolítico y sin fines de lucro, formado exclusivamente por estudiantes. Enfrentando los retos con resiliencia académica, estamos uniendo el rigor de nuestra Ciudad Universitaria con la ambición de una nueva generación decidida a llevar el talento venezolano a las competencias de ingeniería más exigentes del mundo.</p>
+<p>Actualmente, estamos trabajando con el sello "Hecho en Venezuela", utilizando herramientas de vanguardia como modelado 3D, simulación avanzada y manufactura de precisión directamente en nuestro campus para demostrar los estándares internacionales de nuestra casa de estudios.</p></div>
+  </article>
+  <article id="nuestro-futuro" class="capitulo c-azul">
+    <div class="cap-lado"><b>F-27</b><i>Futuro</i></div>
+    <div class="cap-cuerpo reveal"><h3>Nuestro Futuro</h3>
+<p>Estamos enfocados en culminar con éxito la fase de diseño y manufactura de nuestro monoplaza oficial, el F-27. Paralelamente, buscamos consolidar alianzas estratégicas con patrocinadores y realizar las pruebas dinámicas y de simulación necesarias para poner el coche a punto.</p>
+<p>No obstante, nuestra meta definitiva es llevar el monoplaza a competir internacionalmente en Michigan o Brasil, obteniendo los mejores resultados posibles y logrando una reactivación histórica sostenible que devuelva de forma permanente a la UCV a la élite de la ingeniería mundial. Queremos seguir siendo un lugar de aprendizaje práctico que motive a los futuros profesionales a especializarse y aplicar sus conocimientos dentro del país.</p>
+<figure class="reveal"><img src="style/img/Nuestro futuro2.png" alt="Diseño del monoplaza F-27" loading="lazy"></figure></div>
+  </article>
 
-    <section id="donaciones" class="donaciones-minimal">
-        <div class="donaciones-container-min reveal reveal-scale">
-            <div class="donaciones-texto-min">
-                <h2>IMPULSA LA INGENIERIA <span>VENEZOLANA</span></h2>
-                <p>Diseñar y construir un vehículo de carreras requiere más que talento; requiere recursos. Ayúdanos a llevar la bandera de la UCV a la línea de meta internacional.</p>
-            </div>
-            <div class="donaciones-tracker-min">
-                <div class="tracker-info">
-                    <span class="monto-actual">15% <span class="usd-text">Recaudado</span></span>
-                    <span class="monto-meta">Meta: 100%</span>
-                </div>
-                <div class="barra-fondo-min">
-                    <div class="barra-relleno-min" style="width: 15%;"></div>
-                </div>
-            </div>
-            <div class="donaciones-razones-min">
-                <div class="razon-item"><i class="fa-solid fa-gears"></i><span>Piezas y Ensamblaje</span></div>
-                <div class="razon-item"><i class="fa-solid fa-plane-departure"></i><span>Logística</span></div>
-                <div class="razon-item"><i class="fa-solid fa-flag-checkered"></i><span>Inscripción</span></div>
-            </div>
-            <a href="Donaciones.html" class="btn-donar-min">Acelera Nuestro Sueño</a>
-        </div>
-    </section>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><div><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i></div><div><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i><i>Fórmula SAE UCV</i><i>◆</i><i>Venezuela</i><i>◆</i><i>Diseñamos</i><i>◆</i><i>Construimos</i><i>◆</i><i>Competimos</i><i>◆</i></div></div></div>
 
-    <section id="historia" class="seccion-mitad">
-        <div class="mitad-texto reveal reveal-left">
-            <h2>Nuestro Pasado</h2>
-            <div class="linea-naranja"></div>
-            <p>Nuestra historia comenzó en el año 2003 con la creación del grupo fórmula SAE UCV, pero nuestro verdadero impacto internacional arrancó en 2005. Ese año, marcamos un hito al llevar a la competencia de Michigan nuestro primer prototipo oficial: el F-05 «Milka Duno», bautizado así en honor a la reconocida piloto venezolana y madrina del equipo.</p>
-            <p>¿Y qué logramos en ese histórico debut? Logramos romper las fronteras de la ingeniería nacional, compitiendo por primera vez contra las mejores universidades del mundo y sentando las bases de una escudería que, en años posteriores, llegaría a posicionarse en el codiciado Top 10 global frente a más de 130 competidores internacionales. Aquella participación en 2005 no fue solo una carrera; fue el motor que encendió nuestro legado.</p>
-        </div>
-        <div class="mitad-imagen pasado-img reveal reveal-right"></div>
-    </section>
+</section>
 
-    <section id="nuestro-presente" class="seccion-texto-centrado">
-        <div class="contenedor-texto-amplio reveal reveal-bottom">
-            <h2>Nuestro Presente</h2>
-            <div class="linea-naranja centrada"></div>
-            <p>Hoy, el Team Fórmula SAE-UCV se encuentra en un momento histórico de reconstrucción y reactivación. Tras una década de ausencia en las competiciones internacionales, nos hemos integrado como un equipo multidisciplinario profundamente comprometido con la excelencia técnica; un equipo dedicado a la investigación, el desarrollo, siendo apolítico y sin fines de lucro, formado exclusivamente por estudiantes. Enfrentando los retos con resiliencia académica, estamos uniendo el rigor de nuestra Ciudad Universitaria con la ambición de una nueva generación decidida a llevar el talento venezolano a las competencias de ingeniería más exigentes del mundo.</p>
-            <p>Actualmente, estamos trabajando con el sello "Hecho en Venezuela", utilizando herramientas de vanguardia como modelado 3D, simulación avanzada y manufactura de precisión directamente en nuestro campus para demostrar los estándares internacionales de nuestra casa de estudios.</p>
-        </div>
-    </section>
 
-    <section id="nuestro-futuro" class="seccion-mitad1">
-        <div class="mitad-imagen futuro-img reveal reveal-left"></div>
-        <div class="mitad-texto reveal reveal-right">
-            <h2>Nuestro Futuro</h2>
-            <div class="linea-naranja"></div>
-            <p>Estamos enfocados en culminar con éxito la fase de diseño y manufactura de nuestro monoplaza oficial, el F-27. Paralelamente, buscamos consolidar alianzas estratégicas con patrocinadores y realizar las pruebas dinámicas y de simulación necesarias para poner el coche a punto.</p>
-            <p>No obstante, nuestra meta definitiva es llevar el monoplaza a competir internacionalmente en Michigan o Brasil, obteniendo los mejores resultados posibles y logrando una reactivación histórica sostenible que devuelva de forma permanente a la UCV a la élite de la ingeniería mundial. Queremos seguir siendo un lugar de aprendizaje práctico que motive a los futuros profesionales a especializarse y aplicar sus conocimientos dentro del país.</p>
-        </div>
-    </section>
 
-    <section id="diseno-anterior" class="seccion-diseno-anterior">
-        <div class="diseno-container">
-            <div class="diseno-texto reveal reveal-left">
-                <h2>Nuestro <span>Diseño Histórico</span></h2>
-                <div class="linea-naranja"></div>
-                <p>Antes de mirar hacia nuestro nuevo monoplaza, rendimos tributo al vehículo que demostró de qué está hecha la ingeniería de la UCV: el legendario <strong>UCV-15</strong>.</p>
-                <p>En la competencia de Formula SAE Michigan 2015, este monoplaza hizo historia al convertirse en el primer prototipo venezolano en superar todas las exigentes pruebas dinámicas de la SAE, incluyendo la implacable prueba de <em>Endurance</em> (Resistencia en pista). Su nivel de ingeniería fue tal, que fue galardonado internacionalmente.</p>
-                <ul class="specs-list">
+<section id="diseno-anterior" class="ficha">
+  <div class="ficha-img reveal"><img src="style/img/diseno anterior2.png" alt="Vehículo anterior SAE UCV" loading="lazy"><div class="diseno-badge">Generación 2015</div></div>
+  <div class="ficha-texto reveal"><h2>Nuestro Diseño Histórico</h2>
+<p>Antes de mirar hacia nuestro nuevo monoplaza, rendimos tributo al vehículo que demostró de qué está hecha la ingeniería de la UCV: el legendario <strong>UCV-15</strong>.</p>
+<p>En la competencia de Formula SAE Michigan 2015, este monoplaza hizo historia al convertirse en el primer prototipo venezolano en superar todas las exigentes pruebas dinámicas de la SAE, incluyendo la implacable prueba de <em>Endurance</em> (Resistencia en pista). Su nivel de ingeniería fue tal, que fue galardonado internacionalmente.</p>
+<ul class="specs-list">
                     <li><i class="fa-solid fa-car-side"></i> <strong>Prototipo:</strong> F-15 (Generación 2015).</li>
-                    <li><i class="fa-solid fa-network-wired"></i> <strong>Chasís:</strong> Tubular de acero.</li>
+                    <li><i class="fa-solid fa-network-wired"></i> <strong>Chasis:</strong> Tubular de acero.</li>
                     <li><i class="fa-solid fa-weight-hanging"></i> <strong>Peso:</strong> 245 kg.</li>
                     <li id="logro"><i class="fa-solid fa-trophy"></i> <strong>Logro Mundial:</strong> Posición 61 de 130 universidades y Ganador del <strong>Premio Bosch</strong> (6to lugar global en Planos de Diseño).</li>
-                </ul>
-            </div>
-            <div class="diseno-imagen reveal reveal-right">
-                <img src="style/img/diseno anterior2.png" alt="Vehículo anterior SAE UCV">
-                <div class="diseno-badge">Generación 2015</div>
-            </div>
-        </div>
-    </section>
-    <section class="home-donations">
-        <div class="donations-content">
-            <h2 class="donations-title">Ayudanos a Traer Nuestra Historia de Vuelta</h2>
-            <p class="donations-text">Tu apoyo es fundamental para recuperar nuestra historia y continuar el legado de excelencia en Formula SAE. Nosotros tenemos un prototipo en Miami desde la última vez que competimos, por lo tanto necesitamos de tu apoyo para traerlo a Venezuela, y asi poder recuperar nuestra historia y el legado de nuestra amada Alma Mater.</p>
-            <a href="Ayudas.html" class="btn-donar-min">Ayudanos a Recuperar Nuestra Historia</a>
-        </div>
-    </section>
-    <section id="equipo" class="seccion-team">
+                </ul></div>
+</section>
+
+<section class="banda-ayuda"><div class="banda-in"><div><h2>Ayúdanos a traer nuestra historia de vuelta</h2>
+<p class="">Tu apoyo es fundamental para recuperar nuestra historia y continuar el legado de excelencia en Formula SAE. Nosotros tenemos un prototipo en Miami desde la última vez que competimos, por lo tanto necesitamos de tu apoyo para traerlo a Venezuela, y así poder recuperar nuestra historia y el legado de nuestra amada Alma Mater.</p></div><a href="Ayudas.html" class="btn-claro">Ayúdanos a recuperar nuestra historia</a></div></section>
+
+
+
+<section id="equipo" class="seccion-team">
         <div class="team-container">
             <div class="team-header reveal reveal-bottom">
                 <h2>Nuestro <span>Team</span> Fórmula SAE</h2>
@@ -176,28 +142,28 @@
         </div>
     </section>
 
-    <section id="galeria" class="seccion-galeria">
+<section id="galeria" class="seccion-galeria">
         <div class="galeria-header reveal reveal-bottom">
             <h2>Nuestra <span>Galería</span></h2>
             <div class="linea-naranja centrada"></div>
             <p>Desliza para ver el diseño, la ingeniería y la pasión de nuestro equipo.</p>
         </div>
         <div class="carrusel-wrapper reveal reveal-scale">
-            <button class="btn-carrusel btn-izq" onclick="moverCarrusel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="btn-carrusel btn-izq" aria-label="Foto anterior" onclick="moverCarrusel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="carrusel-track" id="pista-galeria">
-                <div class="galeria-item"><img src="style/img/146.png" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/2014-12-30 17.38.45.jpg" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/2013-07-25 19.55.52.jpg" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/DSCN3198.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/Nuestro futuro2.png" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/IMG-20141119-WA0039.jpg" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/554817691_24683566754607182_4028889718862192963_n.jpg" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/michigan 078.jpg" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/DSC00080.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/DSC01806.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
-                <div class="galeria-item"><img src="style/img/DSC01816.JPG" alt="Taller"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/146.png" alt="Galería del equipo, foto 1" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/2014-12-30 17.38.45.jpg" alt="Galería del equipo, foto 2" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/2013-07-25 19.55.52.jpg" alt="Galería del equipo, foto 3" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/DSCN3198.JPG" alt="Galería del equipo, foto 4" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/Nuestro futuro2.png" alt="Galería del equipo, foto 5" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/IMG-20141119-WA0039.jpg" alt="Galería del equipo, foto 6" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/554817691_24683566754607182_4028889718862192963_n.jpg" alt="Galería del equipo, foto 7" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/michigan 078.jpg" alt="Galería del equipo, foto 8" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/DSC00080.JPG" alt="Galería del equipo, foto 9" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/DSC01806.JPG" alt="Galería del equipo, foto 10" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
+                <div class="galeria-item"><img src="style/img/DSC01816.JPG" alt="Galería del equipo, foto 11" loading="lazy" decoding="async"><div class="galeria-overlay"><i class="fa-solid fa-camera"></i></div></div>
             </div>
-            <button class="btn-carrusel btn-der" onclick="moverCarrusel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="btn-carrusel btn-der" aria-label="Foto siguiente" onclick="moverCarrusel(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -216,6 +182,7 @@
         </div>
     </section>
 
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-content-row">
@@ -229,6 +196,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

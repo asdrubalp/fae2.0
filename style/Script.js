@@ -1,115 +1,62 @@
-// Fecha del evento
-var countDownDate = new Date("July 30, 2026 15:37:25").getTime();
+/* Cuenta regresiva (solo corre si la página tiene el reloj) */
+(function () {
+    var dias = document.getElementById("dias");
+    if (!dias) return;
+    var meta = new Date("July 30, 2026 15:37:25").getTime();
+    var ids = ["dias", "horas", "minutos", "segundos"];
+    var pad = function (n) { return n < 10 ? "0" + n : String(n); };
+    var pintar = function (v) { ids.forEach(function (id, i) { document.getElementById(id).textContent = v[i]; }); };
+    var x = setInterval(function () {
+        var d = meta - Date.now();
+        if (d < 0) { clearInterval(x); return pintar(["00", "00", "00", "00"]); }
+        pintar([pad(Math.floor(d / 864e5)), pad(Math.floor(d % 864e5 / 36e5)), pad(Math.floor(d % 36e5 / 6e4)), pad(Math.floor(d % 6e4 / 1e3))]);
+    }, 1000);
+})();
 
-var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Función para añadir un cero a la izquierda si el número es menor a 10 (ej: 09, 08...)
-    days = days < 10 ? "0" + days : days;
-    hours = hours < 10 ? "0" + hours : hours;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    
-    // Inyectar los resultados en cada bloque correspondiente
-    document.getElementById("dias").innerHTML = days;
-    document.getElementById("horas").innerHTML = hours;
-    document.getElementById("minutos").innerHTML = minutes;
-    document.getElementById("segundos").innerHTML = seconds;
-    
-    // Si el tiempo termina
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("dias").innerHTML = "00";
-        document.getElementById("horas").innerHTML = "00";
-        document.getElementById("minutos").innerHTML = "00";
-        document.getElementById("segundos").innerHTML = "00";
-    }
-}, 1000);
-
-/* =========================================
-   CONTROLADOR DEL CARRUSEL DE GALERÍA
-   ========================================= */
+/* Carrusel de galería: se desplaza el ancho de una foto + el espacio entre fotos */
 function moverCarrusel(direccion) {
-    // Busca la pista donde están todas las fotos
-    const pista = document.getElementById('pista-galeria');
-    
-    // Calcula cuánto debe desplazarse: El ancho de una foto (320px) + el espacio del gap (24px)
-    const distancia = 344 * direccion; 
-    
-    // Ejecuta el movimiento suave
-    pista.scrollBy({ left: distancia, behavior: 'smooth' });
+    var pista = document.getElementById("pista-galeria");
+    if (!pista) return;
+    var foto = pista.querySelector(".galeria-item");
+    var gap = parseFloat(getComputedStyle(pista).columnGap) || 24;
+    pista.scrollBy({ left: (foto ? foto.offsetWidth + gap : 344) * direccion, behavior: "smooth" });
 }
 
-/* =========================================
-   ANIMACIONES DE SCROLL (INTERSECTION OBSERVER)
-   ========================================= */
-document.addEventListener("DOMContentLoaded", function() {
-    // Busca todos los elementos que tengan la clase "reveal"
-    const reveals = document.querySelectorAll(".reveal");
+document.addEventListener("DOMContentLoaded", function () {
+    /* Aparición al hacer scroll (una sola vez) */
+    var reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add("active"); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+        reveals.forEach(function (r) { io.observe(r); });
+    } else {
+        reveals.forEach(function (r) { r.classList.add("active"); });
+    }
 
-    // Configuración del observador
-    const revealOptions = {
-        threshold: 0.15, // Se activa cuando el 15% del elemento entra en la pantalla
-        rootMargin: "0px 0px -50px 0px" // Evita que se active antes de tiempo
+    /* Barra superior: se compacta al bajar (la clase .sticky ya existía en el CSS pero nunca se activaba) */
+    var barra = document.querySelector(".titulo-pagina-inicio");
+    if (barra) {
+        var alternar = function () { barra.classList.toggle("sticky", window.scrollY > 40); };
+        alternar();
+        window.addEventListener("scroll", alternar, { passive: true });
+    }
+
+    /* Menú móvil */
+    var toggle = document.getElementById("menu-toggle");
+    var menu = document.getElementById("botones-titulo");
+    if (!toggle || !menu) return;
+    var icono = toggle.querySelector("i");
+    var estado = function (abierto) {
+        menu.classList.toggle("desplegado", abierto);
+        icono.classList.toggle("fa-xmark", abierto);
+        icono.classList.toggle("fa-bars", !abierto);
+        toggle.setAttribute("aria-expanded", abierto);
+        toggle.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
     };
-
-    // Crea el observador
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            // Si el elemento no está en la pantalla, no hace nada
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                // Si entra en la pantalla, le añade la clase "active" para animarlo
-                entry.target.classList.add("active");
-                
-                // Opcional: Deja de observarlo para que la animación ocurra solo 1 vez
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, revealOptions);
-
-    // Aplica el vigilante a cada elemento
-    reveals.forEach(reveal => {
-        revealOnScroll.observe(reveal);
-    });
-});
-
-/* =========================================
-   CONTROLADOR DEL MENÚ MÓVIL (HAMBURGUESA)
-   ========================================= */
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuBotones = document.getElementById('botones-titulo');
-    const enlacesMenu = document.querySelectorAll('.botones-de-inicio');
-    const iconoMenu = menuToggle.querySelector('i');
-
-    // 1. Abrir y cerrar la cortina al tocar la hamburguesa
-    menuToggle.addEventListener('click', function() {
-        menuBotones.classList.toggle('desplegado');
-        
-        // Efecto premium: Cambiar las 3 barritas por una 'X' al abrir
-        if(menuBotones.classList.contains('desplegado')) {
-            iconoMenu.classList.remove('fa-bars');
-            iconoMenu.classList.add('fa-xmark');
-        } else {
-            iconoMenu.classList.remove('fa-xmark');
-            iconoMenu.classList.add('fa-bars');
-        }
-    });
-
-    // 2. Cerrar el menú automáticamente cuando el usuario toca un enlace
-    enlacesMenu.forEach(function(enlace) {
-        enlace.addEventListener('click', function() {
-            menuBotones.classList.remove('desplegado');
-            iconoMenu.classList.remove('fa-xmark');
-            iconoMenu.classList.add('fa-bars');
-        });
-    });
+    toggle.addEventListener("click", function () { estado(!menu.classList.contains("desplegado")); });
+    document.querySelectorAll(".botones-de-inicio").forEach(function (a) { a.addEventListener("click", function () { estado(false); }); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") estado(false); });
 });
