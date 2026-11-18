@@ -16,7 +16,7 @@
     --font-text: 'Inter', sans-serif;
     --ease: cubic-bezier(.2, .7, .2, 1);
     --tricolor: linear-gradient(90deg, var(--blue2) 0 33.3%, var(--primary) 33.3% 66.6%, var(--red) 66.6%);
-    --pad: clamp(1.25rem, 6vw, 5.5rem);
+    --pad: clamp(1rem, 5vw, 5.5rem);
     --cut: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
     --slant: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
 }
@@ -38,11 +38,13 @@ body {
     color: var(--text);
     font-family: var(--font-text);
     line-height: 1.65;
-    overflow-x: hidden;
+    overflow-x: clip; /* Evita scroll horizontal sin romper position: sticky */
+    -webkit-text-size-adjust: 100%;
 }
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -86,7 +88,7 @@ a:focus-visible, button:focus-visible {
     display: inline-block;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: .9rem;
+    font-size: clamp(.82rem, 1vw, .9rem);
     padding: 1rem 2.3rem;
     text-align: center;
     clip-path: var(--slant);
@@ -136,7 +138,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-top: 7rem;
+    padding-top: 6.5rem;
     overflow: hidden;
     background: linear-gradient(100deg, rgba(6, 8, 13, .94) 5%, rgba(6, 8, 13, .55) 55%, rgba(39, 70, 131, .35)), linear-gradient(transparent 50%, var(--bg)), url("img/IMG-20141119-WA0039.jpg") center/cover;
 }
@@ -164,8 +166,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .titulo-pagina-inicio.sticky {
-    background: rgba(6, 8, 13, .88);
+    background: rgba(6, 8, 13, .92);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 .titulo-pagina-inicio.sticky::after {
@@ -189,6 +192,7 @@ a:focus-visible, button:focus-visible {
     color: #fff;
     font-size: 1.8rem;
     cursor: pointer;
+    padding: .4rem;
 }
 
 #botones-titulo {
@@ -249,6 +253,7 @@ a:focus-visible, button:focus-visible {
     height: 84vh;
     width: auto;
     opacity: .16;
+    pointer-events: none;
 }
 
 .hero-texto {
@@ -258,7 +263,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero-texto h1 {
-    font-size: clamp(2.4rem, 7.4vw, 6.6rem);
+    font-size: clamp(2.1rem, 7vw, 6.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: .98;
@@ -297,6 +302,7 @@ a:focus-visible, button:focus-visible {
     padding: 1.4rem 1.5rem;
     background: rgba(10, 13, 20, .82);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .hero-datos div:first-child {
@@ -368,7 +374,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .sec-titulo {
-    font-size: clamp(2.2rem, 6vw, 5rem);
+    font-size: clamp(2rem, 5.8vw, 5rem);
     font-weight: 900;
     margin-bottom: 3rem;
     position: relative;
@@ -428,7 +434,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .cap-cuerpo h3 {
-    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
     margin-bottom: 1.2rem;
     text-transform: uppercase;
 }
@@ -480,6 +486,7 @@ a:focus-visible, button:focus-visible {
     color: #0a0a0a;
     font-family: var(--font-heading);
     font-weight: 700;
+    font-size: clamp(.75rem, 1.1vw, .95rem);
     padding: .7rem 1.6rem 1rem;
     clip-path: var(--slant);
 }
@@ -539,7 +546,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .team-header h2 {
-    font-size: clamp(2.2rem, 5.5vw, 4.4rem);
+    font-size: clamp(2rem, 5.5vw, 4.4rem);
     font-weight: 900;
 }
 
@@ -653,7 +660,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .galeria-header h2 {
-    font-size: clamp(2.2rem, 5.5vw, 4.4rem);
+    font-size: clamp(2rem, 5.5vw, 4.4rem);
     font-weight: 900;
 }
 
@@ -681,6 +688,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     gap: 1.2rem;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding: 1rem var(--pad);
     scrollbar-width: none;
@@ -755,7 +763,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .don h2 {
-    font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+    font-size: clamp(1.8rem, 4.2vw, 3.4rem);
     font-weight: 900;
     margin-bottom: 1.2rem;
 }
@@ -769,7 +777,8 @@ a:focus-visible, button:focus-visible {
 .don-panel {
     background: rgba(255, 255, 255, .06);
     backdrop-filter: blur(12px);
-    padding: 2rem;
+    -webkit-backdrop-filter: blur(12px);
+    padding: clamp(1.4rem, 3vw, 2rem);
     clip-path: var(--cut);
     border: 1px solid var(--line);
 }
@@ -778,12 +787,14 @@ a:focus-visible, button:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
+    gap: .5rem;
     margin-bottom: .8rem;
 }
 
 .monto-actual {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 900;
     color: var(--primary);
 }
@@ -990,8 +1001,9 @@ a:focus-visible, button:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(6, 8, 13, .9);
+    background: rgba(6, 8, 13, .92);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     padding: .8rem var(--pad);
 }
 
@@ -1030,7 +1042,7 @@ a:focus-visible, button:focus-visible {
    ENCABEZADO DE PÁGINAS INTERNAS (HERO)
    ========================================= */
 .equipo-hero, .ayuda-hero {
-    padding: 5rem var(--pad) 4rem;
+    padding: clamp(3rem, 7vw, 5rem) var(--pad) clamp(2.5rem, 5vw, 4rem);
     background: linear-gradient(100deg, rgba(6, 8, 13, .95), rgba(6, 8, 13, .6)), linear-gradient(transparent 50%, var(--bg)), url("img/upscalemedia-transformed.png") center/cover;
 }
 
@@ -1040,7 +1052,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .equipo-hero h1, .ayuda-title {
-    font-size: clamp(2.2rem, 6.4vw, 5rem);
+    font-size: clamp(2rem, 6.4vw, 5rem);
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -1056,7 +1068,7 @@ span.clase2 {
 .equipo-hero p, .ayuda-subtitle {
     color: #cfd6e6;
     max-width: 60ch;
-    font-size: 1.08rem;
+    font-size: clamp(.95rem, 1.4vw, 1.08rem);
     margin-top: .6rem;
 }
 
@@ -1143,7 +1155,7 @@ span.clase2 {
    PÁGINA DE DONACIONES Y AYUDA
    ========================================= */
 .seccion-donaciones, .instrucciones-donacion {
-    padding: 3.5rem var(--pad);
+    padding: clamp(2.5rem, 5vw, 3.5rem) var(--pad);
 }
 
 .contenedor-donaciones {
@@ -1153,7 +1165,7 @@ span.clase2 {
 }
 
 .instrucciones-title {
-    font-size: clamp(1.5rem, 3.4vw, 2.4rem);
+    font-size: clamp(1.4rem, 3.4vw, 2.4rem);
     text-align: center;
     margin-bottom: 2.2rem;
 }
@@ -1184,7 +1196,7 @@ span.clase2 {
 
 .paso-numero1, .paso-numero2, .paso-numero3 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 900;
     line-height: 1;
     margin-bottom: .6rem;
@@ -1304,121 +1316,335 @@ span.clase2 {
 }
 
 /* =========================================
-   DISEÑO RESPONSIVO (MEDIA QUERIES MAESTRAS)
+   DISEÑO RESPONSIVO (PC, TABLET Y TELÉFONO)
    ========================================= */
+
+/* --- PANTALLAS GRANDES / MONITORES PC (1440px+) --- */
+@media (min-width: 1440px) {
+    .hero-texto,
+    .team-container,
+    .banda-in,
+    .redes-container-min,
+    .footer-container {
+        max-width: 1380px;
+    }
+
+    .equipo-seccion {
+        max-width: 1440px;
+    }
+}
+
+/* --- TABLETS HORIZONTALES Y LAPTOPS PEQUEÑAS (hasta 1024px) --- */
+@media (max-width: 1024px) {
+    .hero-iso {
+        height: 68vh;
+        opacity: .12;
+        right: -6vw;
+    }
+
+    .botones-de-inicio {
+        font-size: .75rem;
+        padding: .5rem .7rem;
+    }
+
+    .boton-destacado {
+        padding: .6rem 1.1rem;
+    }
+
+    .ficha {
+        gap: 2.5rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* --- TABLETS VERTICALES (hasta 992px) --- */
 @media (max-width: 992px) {
     .hero-iso {
         display: none;
     }
+
     .hero-datos {
         grid-template-columns: 1fr 1fr;
     }
+
     .hero-datos div:first-child {
         padding-left: 1.5rem;
     }
+
     .capitulo {
         grid-template-columns: 1fr;
         gap: 1rem;
+        padding: 2.5rem 0;
     }
+
     .cap-lado {
         position: static;
         display: flex;
         gap: 1rem;
         align-items: center;
     }
+
     .cap-lado b br {
         display: none;
     }
+
     .cap-lado i {
         margin: 0;
     }
+
     .ficha, .don {
         grid-template-columns: 1fr;
     }
+
+    .don {
+        clip-path: polygon(0 3vw, 100% 0, 100% 100%, 0 100%);
+        margin-top: -2vw;
+    }
+
     .team-grid {
         grid-template-columns: 1fr;
     }
+
+    .galeria-item {
+        flex: 0 0 46vw;
+        height: 36vw;
+        max-height: 320px;
+    }
+
     .banda-in, .redes-container-min {
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
+
+    .banda-in p {
+        margin-inline: auto;
+    }
 }
 
+/* --- TELÉFONOS Y TABLETS PEQUEÑAS (hasta 768px) --- */
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 64px;
+    }
+
     .titulo-pagina-inicio {
+        height: 64px;
         padding: 0 1.25rem;
     }
+
     .menu-hamburguesa {
         display: block;
     }
+
     .imagen-titulo {
-        height: 44px;
+        height: 42px;
     }
+
     #botones-titulo {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(6, 8, 13, .97);
+        background: rgba(6, 8, 13, .98);
+        border-bottom: 2px solid var(--primary);
         flex-direction: column;
         gap: 0;
         clip-path: inset(0 0 100% 0);
         transition: clip-path .35s var(--ease);
     }
+
     #botones-titulo.desplegado {
         clip-path: inset(0);
     }
+
     .botones-de-inicio {
         width: 100%;
         text-align: center;
         padding: 1.1rem;
+        font-size: .9rem;
         border-bottom: 1px solid var(--line);
     }
-    .boton-destacado {
-        margin: .8rem 1rem;
-        width: calc(100% - 2rem);
+
+    .botones-de-inicio::after {
+        display: none;
     }
+
+    .boton-destacado {
+        margin: .9rem 1.25rem;
+        width: calc(100% - 2.5rem);
+        padding: .9rem 1.5rem;
+    }
+
+    /* Hero móvil */
+    #principal {
+        padding-top: 5.5rem;
+        background-position: 72% center;
+    }
+
+    .hero-texto {
+        padding-bottom: 2rem;
+    }
+
+    .hero-texto h1 span {
+        -webkit-text-stroke: 1.5px var(--primary);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
     .hero-cta a {
         width: 100%;
     }
+
+    /* Tarjetas y contenidos */
+    .card-content {
+        padding: 1.2rem 1.4rem 2rem;
+    }
+
+    .btn-team {
+        width: 100%;
+    }
+
+    /* Carrusel móvil (compatible con Safari/iPhone) */
+    .carrusel-track {
+        padding: 1rem 7.5vw;
+        gap: 1rem;
+    }
+
+    .galeria-item {
+        flex: 0 0 85vw;
+        width: 85vw;
+        height: 60vw;
+        max-height: 340px;
+        scroll-snap-align: center;
+    }
+
+    .btn-carrusel {
+        width: 40px;
+        height: 40px;
+        font-size: .95rem;
+    }
+
+    .btn-izq {
+        left: .4rem;
+    }
+
+    .btn-der {
+        right: .4rem;
+    }
+
+    /* Redes y footer */
     .fila-iconos-rs {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
     }
-    .galeria-item {
-        flex-basis: 80vw;
-        height: 60vw;
-        max-height: 340px;
+
+    .footer-address {
+        text-align: center;
+        margin-inline: auto;
     }
+
+    /* Páginas internas en móvil */
+    .nav-equipo {
+        padding: .7rem 1.25rem;
+    }
+
     .nav-logo {
         height: 36px;
     }
+
+    .btn-regresar {
+        padding: .55rem 1rem;
+        font-size: .75rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
     .member-img-box {
         height: 290px;
     }
-    .btn-donar-oficial, .btn-patrocinio {
+
+    .pasos-grid, .grid-donaciones {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-donar-oficial, .btn-patrocinio, .btn-donar-min, .btn-claro {
         width: 100%;
+    }
+
+    .contacto-patrocinio {
+        padding: 1.5rem 1.25rem 1.8rem;
     }
 }
 
+/* --- TELÉFONOS COMPACTOS (hasta 480px) --- */
 @media (max-width: 480px) {
     .hero-datos {
         grid-template-columns: 1fr;
     }
+
+    .hero-datos div:first-child {
+        padding-left: 1.5rem;
+    }
+
+    .cap-lado {
+        flex-wrap: wrap;
+        gap: .6rem;
+    }
+
+    .cap-lado b {
+        font-size: 2.1rem;
+    }
+
+    .specs-list li {
+        padding: .75rem .85rem;
+        font-size: .92rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-img-box {
+        height: 310px;
+    }
+
+    .qr-imagen {
+        width: 145px;
+        border-width: 4px;
+    }
+
+    .fila-iconos-rs {
+        gap: 1.1rem;
+    }
+
+    .item-rs i {
+        font-size: 1.7rem;
+    }
 }
 
+/* --- ACCESIBILIDAD / MOVIMIENTO REDUCIDO --- */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
+
     * {
         transition-duration: .01ms !important;
     }
+
     .marquee-track {
         animation: none;
     }
+
     .reveal {
         opacity: 1;
         transform: none;
