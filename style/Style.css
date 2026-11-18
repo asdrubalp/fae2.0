@@ -38,7 +38,7 @@ body {
     color: var(--text);
     font-family: var(--font-text);
     line-height: 1.65;
-    overflow-x: clip; /* Evita scroll horizontal sin romper position: sticky */
+    overflow-x: clip;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -508,20 +508,22 @@ a:focus-visible, button:focus-visible {
 }
 
 .specs-list li {
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
-    padding: .9rem 1rem;
+    display: block;
+    position: relative;
+    padding: .9rem 1rem .9rem 3rem;
     background: var(--surface);
     margin-bottom: 3px;
     border-left: 3px solid var(--blue2);
+    line-height: 1.5;
 }
 
 .specs-list i {
+    position: absolute;
+    left: 1rem;
+    top: 1.05rem;
     color: var(--primary);
     width: 22px;
     text-align: center;
-    flex: none;
 }
 
 #logro {
@@ -1605,8 +1607,13 @@ span.clase2 {
     }
 
     .specs-list li {
-        padding: .75rem .85rem;
+        padding: .75rem .85rem .75rem 2.7rem;
         font-size: .92rem;
+    }
+
+    .specs-list i {
+        left: .8rem;
+        top: .9rem;
     }
 
     .equipo-grid {
