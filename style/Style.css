@@ -31,6 +31,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 76px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -38,8 +40,14 @@ body {
     color: var(--text);
     font-family: var(--font-text);
     line-height: 1.65;
-    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
+}
+
+header, section, footer {
+    max-width: 100%;
 }
 
 img {
@@ -263,7 +271,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero-texto h1 {
-    font-size: clamp(2.1rem, 7vw, 6.4rem);
+    font-size: clamp(1.85rem, 7vw, 6.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: .98;
@@ -374,7 +382,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .sec-titulo {
-    font-size: clamp(2rem, 5.8vw, 5rem);
+    font-size: clamp(1.8rem, 5.8vw, 5rem);
     font-weight: 900;
     margin-bottom: 3rem;
     position: relative;
@@ -431,10 +439,11 @@ a:focus-visible, button:focus-visible {
 
 .cap-cuerpo {
     max-width: 780px;
+    min-width: 0;
 }
 
 .cap-cuerpo h3 {
-    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
     margin-bottom: 1.2rem;
     text-transform: uppercase;
 }
@@ -466,6 +475,14 @@ a:focus-visible, button:focus-visible {
     padding: clamp(4rem, 9vw, 8rem) var(--pad);
     background: repeating-conic-gradient(#0a0d14 0 25%, #0f131c 0 50%) 0 0 / 9px 9px;
     border-block: 1px solid var(--line);
+    width: 100%;
+    overflow: hidden;
+}
+
+.ficha-img,
+.ficha-texto {
+    min-width: 0;
+    width: 100%;
 }
 
 .ficha-img {
@@ -486,14 +503,16 @@ a:focus-visible, button:focus-visible {
     color: #0a0a0a;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(.75rem, 1.1vw, .95rem);
+    font-size: clamp(.72rem, 1.1vw, .95rem);
     padding: .7rem 1.6rem 1rem;
     clip-path: var(--slant);
+    max-width: 92%;
 }
 
 .ficha-texto h2 {
-    font-size: clamp(1.8rem, 3.6vw, 3rem);
+    font-size: clamp(1.45rem, 3.6vw, 3rem);
     margin-bottom: 1.4rem;
+    overflow-wrap: break-word;
 }
 
 .ficha-texto p {
@@ -515,6 +534,7 @@ a:focus-visible, button:focus-visible {
     margin-bottom: 3px;
     border-left: 3px solid var(--blue2);
     line-height: 1.5;
+    overflow-wrap: break-word;
 }
 
 .specs-list i {
@@ -548,7 +568,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .team-header h2 {
-    font-size: clamp(2rem, 5.5vw, 4.4rem);
+    font-size: clamp(1.8rem, 5.5vw, 4.4rem);
     font-weight: 900;
 }
 
@@ -574,6 +594,7 @@ a:focus-visible, button:focus-visible {
     flex-direction: column;
     position: relative;
     transition: filter .3s;
+    min-width: 0;
 }
 
 .team-card::before {
@@ -652,6 +673,9 @@ a:focus-visible, button:focus-visible {
     padding: clamp(3.5rem, 8vw, 6rem) 0;
     background: var(--surface);
     border-block: 1px solid var(--line);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .galeria-header {
@@ -662,7 +686,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .galeria-header h2 {
-    font-size: clamp(2rem, 5.5vw, 4.4rem);
+    font-size: clamp(1.8rem, 5.5vw, 4.4rem);
     font-weight: 900;
 }
 
@@ -680,15 +704,19 @@ a:focus-visible, button:focus-visible {
 
 .carrusel-wrapper {
     position: relative;
+    width: 100%;
     max-width: 1500px;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .carrusel-track {
     display: flex;
     gap: 1.2rem;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -764,8 +792,13 @@ a:focus-visible, button:focus-visible {
     margin-top: -4vw;
 }
 
+.don > div,
+.don-panel {
+    min-width: 0;
+}
+
 .don h2 {
-    font-size: clamp(1.8rem, 4.2vw, 3.4rem);
+    font-size: clamp(1.7rem, 4.2vw, 3.4rem);
     font-weight: 900;
     margin-bottom: 1.2rem;
 }
@@ -843,6 +876,7 @@ a:focus-visible, button:focus-visible {
     color: var(--primary);
     width: 22px;
     text-align: center;
+    flex: none;
 }
 
 .banda-ayuda {
@@ -1054,7 +1088,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .equipo-hero h1, .ayuda-title {
-    font-size: clamp(2rem, 6.4vw, 5rem);
+    font-size: clamp(1.85rem, 6.4vw, 5rem);
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -1107,6 +1141,7 @@ span.clase2 {
     flex-direction: column;
     position: relative;
     transition: filter .3s;
+    min-width: 0;
 }
 
 .member-card:hover {
@@ -1186,6 +1221,7 @@ span.clase2 {
     clip-path: var(--cut);
     text-align: left;
     border-top: 4px solid var(--blue2);
+    min-width: 0;
 }
 
 .paso-card.destacado2 {
@@ -1241,6 +1277,7 @@ span.clase2 {
     display: flex;
     flex-direction: column;
     border-top: 4px solid var(--blue2);
+    min-width: 0;
 }
 
 .tarjeta-donacion:nth-child(2) {
@@ -1318,10 +1355,11 @@ span.clase2 {
 }
 
 /* =========================================
-   DISEÑO RESPONSIVO (PC, TABLET Y TELÉFONO)
+   DISEÑO RESPONSIVO UNIVERSAL
+   (PC, TABLET, TELÉFONO GRANDE, ESTÁNDAR Y MUY PEQUEÑO)
    ========================================= */
 
-/* --- PANTALLAS GRANDES / MONITORES PC (1440px+) --- */
+/* --- PC / MONITORES PANORÁMICOS (1440px+) --- */
 @media (min-width: 1440px) {
     .hero-texto,
     .team-container,
@@ -1336,7 +1374,7 @@ span.clase2 {
     }
 }
 
-/* --- TABLETS HORIZONTALES Y LAPTOPS PEQUEÑAS (hasta 1024px) --- */
+/* --- TABLET HORIZONTAL Y LAPTOPS COMPACTAS (hasta 1024px) --- */
 @media (max-width: 1024px) {
     .hero-iso {
         height: 68vh;
@@ -1362,7 +1400,7 @@ span.clase2 {
     }
 }
 
-/* --- TABLETS VERTICALES (hasta 992px) --- */
+/* --- TABLET VERTICAL (hasta 992px) --- */
 @media (max-width: 992px) {
     .hero-iso {
         display: none;
@@ -1427,7 +1465,7 @@ span.clase2 {
     }
 }
 
-/* --- TELÉFONOS Y TABLETS PEQUEÑAS (hasta 768px) --- */
+/* --- TELÉFONOS GRANDES / PHABLETS (hasta 768px) --- */
 @media (max-width: 768px) {
     html {
         scroll-padding-top: 64px;
@@ -1481,7 +1519,6 @@ span.clase2 {
         padding: .9rem 1.5rem;
     }
 
-    /* Hero móvil */
     #principal {
         padding-top: 5.5rem;
         background-position: 72% center;
@@ -1503,7 +1540,12 @@ span.clase2 {
         width: 100%;
     }
 
-    /* Tarjetas y contenidos */
+    .marquee {
+        margin: 2rem 0;
+        rotate: 0deg;
+        width: 100%;
+    }
+
     .card-content {
         padding: 1.2rem 1.4rem 2rem;
     }
@@ -1512,17 +1554,17 @@ span.clase2 {
         width: 100%;
     }
 
-    /* Carrusel móvil (compatible con Safari/iPhone) */
     .carrusel-track {
-        padding: 1rem 7.5vw;
-        gap: 1rem;
+        padding: 1rem;
+        gap: .85rem;
     }
 
     .galeria-item {
-        flex: 0 0 85vw;
-        width: 85vw;
-        height: 60vw;
-        max-height: 340px;
+        flex: 0 0 82vw;
+        width: 82vw;
+        max-width: 320px;
+        height: 58vw;
+        max-height: 260px;
         scroll-snap-align: center;
     }
 
@@ -1540,7 +1582,6 @@ span.clase2 {
         right: .4rem;
     }
 
-    /* Redes y footer */
     .fila-iconos-rs {
         flex-wrap: wrap;
         justify-content: center;
@@ -1552,7 +1593,6 @@ span.clase2 {
         margin-inline: auto;
     }
 
-    /* Páginas internas en móvil */
     .nav-equipo {
         padding: .7rem 1.25rem;
     }
@@ -1567,7 +1607,7 @@ span.clase2 {
     }
 
     .equipo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
     .member-img-box {
@@ -1587,7 +1627,7 @@ span.clase2 {
     }
 }
 
-/* --- TELÉFONOS COMPACTOS (hasta 480px) --- */
+/* --- TELÉFONOS ESTÁNDAR (hasta 480px) --- */
 @media (max-width: 480px) {
     .hero-datos {
         grid-template-columns: 1fr;
@@ -1635,6 +1675,142 @@ span.clase2 {
 
     .item-rs i {
         font-size: 1.7rem;
+    }
+}
+
+/* --- TELÉFONOS PEQUEÑOS / IPHONE SE 2-3 GEN (360px - 390px) --- */
+@media (max-width: 390px) {
+    .titulo-pagina-inicio,
+    .nav-equipo {
+        padding: 0 .9rem;
+    }
+
+    .imagen-titulo {
+        height: 36px;
+    }
+
+    .hero-texto h1 {
+        font-size: 1.75rem;
+    }
+
+    .btn-donar-min, .btn-team, .btn-donar-oficial, .btn-patrocinio, .btn-claro, .btn-fantasma {
+        padding: .85rem 1.2rem;
+        font-size: .78rem;
+    }
+
+    .sec-titulo,
+    .team-header h2,
+    .galeria-header h2 {
+        font-size: 1.65rem;
+    }
+
+    .cap-lado b {
+        font-size: 1.8rem;
+    }
+
+    /* Encaje exacto de "Nuestro Diseño Histórico" */
+    .ficha {
+        padding: 2.8rem .9rem;
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+
+    .ficha-img img {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+    }
+
+    .diseno-badge {
+        font-size: .68rem;
+        padding: .5rem 1rem .65rem;
+        max-width: 88%;
+    }
+
+    .ficha-texto h2 {
+        font-size: 1.38rem;
+        line-height: 1.12;
+        margin-bottom: 1rem;
+    }
+
+    .ficha-texto p {
+        font-size: .9rem;
+        line-height: 1.55;
+    }
+
+    .specs-list li {
+        padding: .7rem .75rem .7rem 2.35rem;
+        font-size: .86rem;
+    }
+
+    .specs-list i {
+        left: .65rem;
+        top: .85rem;
+        font-size: .9rem;
+    }
+
+    .card-content {
+        padding: 1rem 1.1rem 1.6rem;
+    }
+
+    .don-panel,
+    .paso-card,
+    .tarjeta-donacion,
+    .contacto-patrocinio {
+        padding: 1.2rem 1rem 1.5rem;
+    }
+
+    .monto-actual {
+        font-size: 1.55rem;
+    }
+
+    .qr-imagen {
+        width: 125px;
+    }
+}
+
+/* --- TELÉFONOS MUY PEQUEÑOS / IPHONE SE 1.ª GEN (hasta 335px) --- */
+@media (max-width: 335px) {
+    .hero-texto h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-texto h1 span {
+        -webkit-text-stroke: 1px var(--primary);
+    }
+
+    .sec-titulo,
+    .team-header h2,
+    .galeria-header h2,
+    .don h2 {
+        font-size: 1.42rem;
+    }
+
+    .ficha {
+        padding: 2.4rem .75rem;
+    }
+
+    .ficha-texto h2 {
+        font-size: 1.2rem;
+    }
+
+    .diseno-badge {
+        font-size: .62rem;
+        padding: .42rem .8rem .55rem;
+    }
+
+    .specs-list li {
+        padding: .65rem .65rem .65rem 2.15rem;
+        font-size: .82rem;
+    }
+
+    .specs-list i {
+        left: .55rem;
+        top: .8rem;
+        font-size: .85rem;
+    }
+
+    .btn-regresar {
+        padding: .45rem .75rem;
+        font-size: .7rem;
     }
 }
 
